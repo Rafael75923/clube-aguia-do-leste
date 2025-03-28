@@ -1,0 +1,43 @@
+.destaque-trimestre {
+    padding: 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .destaque-trimestre h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  .destaque-card {
+    display: inline-block;
+    text-align: center;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+  }
+  
+  .destaque-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+  }
+  
+  .destaque-card img:hover {
+    transform: scale(1.1);
+  }
+  
+  .destaque-card p {
+    font-size: 16px;
+    color: #555;
+    margin: 5px 0;
+  }
+  

@@ -1,0 +1,51 @@
+.ranking {
+    padding: 20px;
+    background-color: #eef2f3;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .ranking h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  .ranking-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+  }
+  
+  .ranking-table thead {
+    background-color: #444;
+    color: #fff;
+  }
+  
+  .ranking-table th, 
+  .ranking-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  .ranking-table th {
+    text-align: center;
+  }
+  
+  .ranking-table tbody tr:hover {
+    background-color: #f5f5f5;
+  }
+  
+  .ranking-table img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .ranking-table img:hover {
+    transform: scale(1.1);
+  }
+  
