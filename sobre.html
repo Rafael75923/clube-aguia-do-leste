@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre - Águia do Leste</title>
+    <link rel="stylesheet" href="assets/css/styles.css"> 
+    <link rel="stylesheet" href="assets/css/destaque.css"> 
+    <link rel="stylesheet" href="assets/css/ranking.css">
+    <link rel="stylesheet" href="assets/css/sobre.css">
+    <link rel="stylesheet" href="assets/css/loja.css">
+    <link rel="stylesheet" href="assets/css/galeria.css">
+    <link rel="stylesheet" href="assets/css/Unidade.css">
+    <link rel="stylesheet" href="assets/css/contato.css">
+    <script src="assets/js/formulario.js" defer></script>
+    <script src="assets/js/lightbox.js" defer></script>
+    <script src="assets/js/scripts.js" defer></script>
+    
+
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <img src="assets/img/logo.png" alt="Logo Águia do Leste" class="logo">
+            <ul class="menu">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="loja.html">Loja</a></li>
+                <li><a href="galeria.html">Galeria</a></li>
+                <li><a href="unidade.html">Unidade</a></li>
+                <li><a href="contatos.html">Contatos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="sobre">
+        <h1>Sobre o Clube Águia do Leste</h1>
+
+        <!-- História do Clube -->
+        <div class="historia">
+            <h2>História</h2>
+            <p>O Clube Águia do Leste foi fundado em 1999 com o objetivo de proporcionar atividades de desenvolvimento pessoal, cidadania e liderança para jovens da nossa comunidade. Ao longo dos anos, o clube tem se destacado por suas atividades de voluntariado e formação de líderes.</p>
+            <div class="fotos">
+                <img src="assets/img/historia1.jpg" alt="Foto 1 da História" class="foto-historia" onclick="abrirLightbox(this)">
+                <img src="assets/img/historia2.jpg" alt="Foto 2 da História" class="foto-historia" onclick="abrirLightbox(this)">
+                <img src="assets/img/historia3.JPG" alt="Foto 2 da História" class="foto-historia" onclick="abrirLightbox(this)">
+                <img src="assets/img/historia4.jpg" alt="Foto 2 da História" class="foto-historia" onclick="abrirLightbox(this)">
+            </div>
+        </div>
+
+        <!-- Organograma da Direção -->
+        <div class="organograma">
+            <h2>Organograma da Direção</h2>
+            <p>A direção do clube é composta por diversos membros, responsáveis por diferentes áreas de atuação.</p>
+            <div class="diretores">
+                <div class="diretor">
+                    <img src="assets/img/associado1.jpeg" alt="Diretor Associado 1" onclick="abrirLightbox(this)">
+                    <p>Ingrid Carvalho</p>
+                    <p>Associado</p>
+                </div>
+                <div class="diretor">
+                    <img src="assets/img/diretor.jpeg" alt="Diretor " onclick="abrirLightbox(this)">
+                    <p>Marcela Batista</p>
+                    <p> Diretor</p>
+                </div>
+                <div class="diretor">
+                    <img src="assets/img/associado2.jpeg" alt="Diretor Associado 2" onclick="abrirLightbox(this)">
+                    <p>Gabriel Torres</p>
+                    <p>Associado</p>
+                </div>
+                
+                <!-- Adicione mais diretores aqui -->
+            </div>
+        </div>
+
+        <!-- Missão do Clube -->
+        <div class="missao">
+            <h2>Missão</h2>
+            <p>A missão do Clube Águia do Leste é formar líderes que possam impactar positivamente a comunidade, promovendo valores de cidadania, respeito, e compromisso com o próximo.</p>
+        </div>
+
+        <!-- Diretores Anteriores -->
+        <div class="diretores-anteriores">
+            <h2>Diretores Anteriores</h2>
+            <p>Conheça os diretores que contribuíram para o sucesso do clube ao longo dos anos.</p>
+            <div class="diretores-lista">
+                <div class="diretor-anterior">
+                    <img src="assets/img/Marcio1.JPG" alt="Diretor Anterior 1" onclick="abrirLightbox(this)">
+                    <p>Marcio Ari</p>
+                </div>
+                <div class="diretor-anterior">
+                    <img src="assets/img/Regiane.JPG" alt="Diretor Anterior 1" onclick="abrirLightbox(this)">
+                    <p>Regiane Santana</p>
+                </div>
+                <div class="diretor-anterior">
+                    <img src="assets/img/Iago3.JPG" alt="Diretor Anterior 2" onclick="abrirLightbox(this)">
+                    <p>Iago Canuto</p>
+                </div>
+                <div class="diretor-anterior">
+                    <img src="assets/img/Rafael4.jpg" alt="Diretor Anterior 2" onclick="abrirLightbox(this)">
+                    <p>Rafael Sousa</p>
+                </div>
+                <div class="diretor-anterior">
+                    <img src="assets/img/Vitoria5.JPG" alt="Diretor Anterior 2" onclick="abrirLightbox(this)">
+                    <p>Vitória Alves</p>
+                </div>
+                <div class="diretor-anterior">
+                    <img src="assets/img/Marcela5.jpg" alt="Diretor Anterior 2" onclick="abrirLightbox(this)">
+                    <p>Marcela Batista</p>
+                </div>
+                <!-- Adicione mais diretores anteriores aqui -->
+            </div>
+        <!-- Lightbox -->
+  <div id="imagem-expandida" class="imagem-expandida" onclick="fecharImagem()">
+    <img id="imagem-modal" src="" alt="Imagem Ampliada">
+  </div>
+
+  <script>
+    // Função para abrir a imagem no lightbox
+    function abrirLightbox(imagem) {
+      var modal = document.getElementById("imagem-expandida");
+      var modalImg = document.getElementById("imagem-modal");
+      modal.style.display = "flex";
+      modalImg.src = imagem.src;
+    }
+
+    // Função para fechar o lightbox
+    function fecharImagem() {
+      var modal = document.getElementById("imagem-expandida");
+      modal.style.display = "none";
+    }
+  </script>
+
+    <footer>
+        <p>Clube de Desbravadores Águia do Leste - Todos os direitos reservados © 2024</p>
+    </footer>
+</body>
+</html>

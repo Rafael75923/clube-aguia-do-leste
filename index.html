@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Site oficial do Clube de Desbravadores Águia do Leste, com informações sobre eventos, ranking e muito mais.">
+  <title>Home - Águia do Leste</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/destaque.css">
+  <link rel="stylesheet" href="assets/css/ranking.css">
+  <link rel="stylesheet" href="assets/css/sobre.css">
+  <link rel="stylesheet" href="assets/css/loja.css">
+  <link rel="stylesheet" href="assets/css/galeria.css">
+  <link rel="stylesheet" href="assets/css/Unidade.css">
+  <link rel="stylesheet" href="assets/css/contato.css">
+  <script src="assets/js/formulario.js" defer></script>
+  <script src="assets/js/lightbox.js" defer></script>
+  <script src="assets/js/scripts.js" defer></script>
+</head>
+
+<body>
+  <!-- Cabeçalho com navegação principal -->
+  <header>
+    <nav class="navbar">
+      <img src="assets/img/logo.png" alt="Logo do Clube de Desbravadores Águia do Leste" class="logo">
+      <ul class="menu">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="loja.html">Loja</a></li>
+        <li><a href="galeria.html">Galeria</a></li>
+        <li><a href="unidade.html">unidade</a></li>
+        <li><a href="contatos.html">Contatos</a></li>
+      </ul>
+    </nav>
+    
+  </header>
+
+  <!-- Seção de boas-vindas -->
+  <section class="boas-vindas">
+    <div class="boas-vindas-texto">
+      <h1>Bem-vindo ao Clube de Desbravadores Águia do Leste</h1>
+      <p>
+        "Nós somos o clube Águia do Leste, e pertencemos ao distrito do
+        Tancredo Neves, Porto Velho - RO. Clube da ANRA - União Noroeste
+        Brasileira."
+      </p>
+      <a href="https://www.youtube.com/@ADLalternativo" target="_blank" class="btn-cta">
+        Conhecer nosso canal
+      </a>
+    </div>
+
+    <div class="boas-vindas-video">
+      <video width="560" height="315" controls>
+        <source src="assets/videos/adlvideo.mp4" type="video/mp4">
+        <track src="assets/videos/adlvideo.vtt" kind="subtitles" srclang="pt-BR" label="Português">
+        Seu navegador não suporta o elemento de vídeo. Visite nosso canal do
+        YouTube para assistir.
+      </video>
+    </div>
+  </section>
+
+  <!-- Seção de anúncios -->
+  <section class="anuncios">
+    <h2>Anúncios</h2>
+    <div class="anuncios-container">
+      <div class="anuncio-item">
+        <h3>Reunião especial no próximo domingo</h3>
+        <p>
+          Não perca nossa reunião especial no próximo domingo às 9h na igreja
+          central.
+        </p>
+      </div>
+      <div class="anuncio-item">
+        <h3>Inscrição para o Campori</h3>
+        <p>
+          Últimos dias para inscrição no Campori 2024! Fale com a diretoria do
+          clube.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Desbravador destaque do trimestre -->
+  <section class="destaque-trimestre">
+    <h2>Desbravador Destaque do Trimestre</h2>
+    <div class="destaque-card">
+      <img src="assets/img/Desbravador destaque/destaque.jpeg" alt="Foto da desbravadora Emanuele Carvalho, destaque do trimestre"
+        onclick="abrirLightbox(this)">
+      <p><strong>Nome:</strong> Emanuele Carvalho</p>
+      <p><strong>Pontuação:</strong> 450 pontos</p>
+    </div>
+  </section>
+
+  <!-- Ranking de desbravadores -->
+  <section class="ranking">
+    <h2>Ranking de Desbravadores</h2>
+    <table class="ranking-table">
+      <thead>
+        <tr>
+          <th>Posição</th>
+          <th>Foto</th>
+          <th>Desbravador</th>
+          <th>Pontuação</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1º</td>
+          <td>
+            <img src="assets/img/Desbravador destaque/desbravador1.jpeg" alt="Imagem da desbravadora Gabriele Oliveira"
+              onclick="abrirLightbox(this)">
+          </td>
+          <td>Gabriele Oliveira</td>
+          <td>500</td>
+        </tr>
+        <tr>
+          <td>2º</td>
+          <td>
+            <img src="assets/img/Desbravador destaque/desbravador2.jpeg" alt="Imagem da desbravadora Beatriz" onclick="abrirLightbox(this)">
+          </td>
+          <td>Beatriz</td>
+          <td>450</td>
+        </tr>
+        <tr>
+          <td>3º</td>
+          <td>
+            <img src="assets/img/Desbravador destaque/desbravador3.jpeg" alt="Imagem da desbravadora Emanuelle"
+              onclick="abrirLightbox(this)">
+          </td>
+          <td>Emanuelle</td>
+          <td>00</td>
+        </tr>
+        <tr>
+          <td>4º</td>
+          <td>
+            <img src="assets/img/Desbravador destaque/desbravador4.jpeg" alt="Imagem do desbravador Daniel" onclick="abrirLightbox(this)">
+          </td>
+          <td>Daniel</td>
+          <td>400</td>
+        </tr>
+        <tr>
+          <td>5º</td>
+          <td>
+            <img src="assets/img/Desbravador destaque/desbravador5.jpeg" alt="Imagem do desbravador Gustavo" onclick="abrirLightbox(this)">
+          </td>
+          <td>Gustavo</td>
+          <td>400</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Cartaz de desaparecido -->
+  <section class="desaparecido">
+    <h2>Desbravador Desaparecido</h2>
+    <div class="cartaz">
+      <img src="assets/img/Desaparecido/desaparecido.jpeg" alt="Foto do desbravador desaparecido Pedro Alves"
+        onclick="abrirLightbox(this)">
+      <h3>Atenção!</h3>
+      <p>
+        Estamos à procura do desbravador <strong>André Alves</strong>. Ele não
+        comparece às atividades do clube desde 20 de setembro de 2024.
+        Qualquer informação, entre em contato com a diretoria.
+      </p>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div id="imagem-expandida" class="imagem-expandida" onclick="fecharImagem()">
+    <img id="imagem-modal" src="" alt="Imagem Ampliada">
+  </div>
+
+  <footer>
+    <p>
+      Clube de Desbravadores Águia do Leste - Todos os direitos reservados ©
+      2024
+    </p>
+  </footer>
+
+  <script>
+    // Função para abrir a imagem no lightbox
+    function abrirLightbox(imagem) {
+      var modal = document.getElementById("imagem-expandida");
+      var modalImg = document.getElementById("imagem-modal");
+      modal.style.display = "flex";
+      modalImg.src = imagem.src;
+    }
+
+    // Função para fechar o lightbox
+    function fecharImagem() {
+      var modal = document.getElementById("imagem-expandida");
+      modal.style.display = "none";
+    }
+  </script>
+</body>
+
+</html>

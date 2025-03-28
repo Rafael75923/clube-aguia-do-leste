@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galeria - Águia do Leste</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/destaque.css">
+  <link rel="stylesheet" href="assets/css/ranking.css">
+  <link rel="stylesheet" href="assets/css/sobre.css">
+  <link rel="stylesheet" href="assets/css/loja.css">
+  <link rel="stylesheet" href="assets/css/galeria.css">
+  <link rel="stylesheet" href="assets/css/Unidade.css">
+  <link rel="stylesheet" href="assets/css/contato.css">
+  <script src="assets/js/formulario.js" defer></script>
+  <script src="assets/js/lightbox.js" defer></script>
+  <script src="assets/js/scripts.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <img src="assets/img/logo.png" alt="Logo Águia do Leste" class="logo">
+      <ul class="menu">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="loja.html">Loja</a></li>
+        <li><a href="galeria.html">Galeria</a></li>
+        <li><a href="unidade.html">Unidade</a></li>
+        <li><a href="contatos.html">Contatos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="galeria">
+    <h1>Galeria</h1>
+    <p>Confira momentos marcantes do nosso clube!</p>
+
+    <div class="eventos">
+      <h2>Acampamento 2023 - Serra Dourada</h2>
+      <div class="evento-fotos">
+        <figure>
+          <img src="assets/img/img1.jpg" alt="Acampamento 2023" onclick="abrirLightbox(this)">
+          <figcaption>Montagem de barracas</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/img/nos-amarras.JPG" alt="Nós e Amarras" onclick="abrirLightbox(this)">
+          <figcaption>Aula de nós</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="eventos">
+      <h2>Desfile 2024 - Porto Velho</h2>
+      <div class="evento-fotos">
+        <figure>
+          <img src="assets/img/evento1.png" alt="Desfile 2024" onclick="abrirLightbox(this)">
+          <figcaption>Marcha cívica</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div id="imagem-expandida" class="imagem-expandida" onclick="fecharImagem()">
+      <img id="imagem-modal" src="" alt="Imagem Ampliada">
+      <p id="descricao-modal"></p>
+    </div>
+  </section>
+
+  <footer>
+    <p>Clube de Desbravadores Águia do Leste - Todos os direitos reservados © 2024</p>
+  </footer>
+
+  <script>
+    function abrirLightbox(imagem) {
+      var modal = document.getElementById("imagem-expandida");
+      var modalImg = document.getElementById("imagem-modal");
+      modal.style.display = "flex";
+      modalImg.src = imagem.src;
+    }
+
+    function fecharImagem() {
+      var modal = document.getElementById("imagem-expandida");
+      modal.style.display = "none";
+    }
+  </script>
+</body>
+
+</html>
