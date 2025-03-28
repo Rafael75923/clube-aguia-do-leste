@@ -43,7 +43,7 @@
         <div class="unit-info">
             <h3>Preenchimento de Dados</h3>
             <div class="form-scroll">
-                <form id="formulario" onsubmit="return false;">
+                <form id="formularioAguiaDaEsperanca" onsubmit="return false;">
                     <table class="form-table" id="tabela-dados">
                         <tr>
                             <th>Desbravador</th>
@@ -59,46 +59,47 @@
                             <th>Pontuação</th>
                         </tr>
                         <tr>
-                            <td><input type="text" name="desbravador1" placeholder="Nome do Desbravador 1"></td>
+                            <input type="hidden" id="Data Emissão" name="Data Emissão">
+                            <td><input type="text" name="Desbravador" placeholder="Nome do Desbravador"></td>
                             <td>
-                                <input type="radio" name="presenca1" value="10" onchange="calcularPontuacao()"> Sim
-                                <input type="radio" name="presenca1" value="0" onchange="calcularPontuacao()"> Não
+                                <input type="radio" name="Presenca" value="10" onchange="calcularPontuacao()"> Sim
+                                <input type="radio" name="Presenca" value="0" onchange="calcularPontuacao()"> Não
                             </td>
                             <td>
-                                <input type="radio" name="pontualidade1" value="10" onchange="calcularPontuacao()"> Sim
-                                <input type="radio" name="pontualidade1" value="5" onchange="calcularPontuacao()"> Chegou Atrasado
-                                <input type="radio" name="pontualidade1" value="0" onchange="calcularPontuacao()"> Não
+                                <input type="radio" name="Pontualidade" value="10" onchange="calcularPontuacao()"> Sim
+                                <input type="radio" name="Pontualidade" value="5" onchange="calcularPontuacao()"> Chegou Atrasado
+                                <input type="radio" name="Pontualidade" value="0" onchange="calcularPontuacao()"> Não
                             </td>
                             <td>
-                                <input type="radio" name="uniforme1" value="10" onchange="calcularPontuacao()"> Sim
-                                <input type="radio" name="uniforme1" value="5" onchange="calcularPontuacao()"> Incompleto
-                                <input type="radio" name="uniforme1" value="0" onchange="calcularPontuacao()"> Não
+                                <input type="radio" name="Uniforme Completo" value="10" onchange="calcularPontuacao()"> Sim
+                                <input type="radio" name="Uniforme Completo" value="5" onchange="calcularPontuacao()"> Incompleto
+                                <input type="radio" name="Uniforme Completo" value="0" onchange="calcularPontuacao()"> Não
                             </td>
                             <td>
-                                <input type="radio" name="biblia1" value="10" onchange="calcularPontuacao()"> Sim
-                                <input type="radio" name="biblia1" value="0" onchange="calcularPontuacao()"> Não
+                                <input type="radio" name="Bíblia" value="10" onchange="calcularPontuacao()"> Sim
+                                <input type="radio" name="Bíblia" value="0" onchange="calcularPontuacao()"> Não
                             </td>
                             <td>
-                                <input type="radio" name="pequeno_grupo1" value="10" onchange="calcularPontuacao()"> Sim
-                                <input type="radio" name="pequeno_grupo1" value="0" onchange="calcularPontuacao()"> Não
+                                <input type="radio" name="Pequeno Grupo" value="10" onchange="calcularPontuacao()"> Sim
+                                <input type="radio" name="Pequeno Grupo" value="0" onchange="calcularPontuacao()"> Não
                             </td>
                             <td>
-                                <input type="radio" name="classe_biblica1" value="10" onchange="calcularPontuacao()"> Sim
-                                <input type="radio" name="classe_biblica1" value="0" onchange="calcularPontuacao()"> Não
+                                <input type="radio" name="Classe Bíblica" value="10" onchange="calcularPontuacao()"> Sim
+                                <input type="radio" name="Classe Bíblica" value="0" onchange="calcularPontuacao()"> Não
                             </td>
                             <td>
-                                <input type="radio" name="ano_biblico1" value="10" onchange="calcularPontuacao()"> Sim
-                                <input type="radio" name="ano_biblico1" value="0" onchange="calcularPontuacao()"> Não
+                                <input type="radio" name="Ano Bíblico" value="10" onchange="calcularPontuacao()"> Sim
+                                <input type="radio" name="Ano Bíblico" value="0" onchange="calcularPontuacao()"> Não
                             </td>
                             <td>
-                                <input type="radio" name="visita1" value="10" onchange="calcularPontuacao()"> Sim
-                                <input type="radio" name="visita1" value="0" onchange="calcularPontuacao()"> Não
+                                <input type="radio" name="Visita" value="10" onchange="calcularPontuacao()"> Sim
+                                <input type="radio" name="Visita" value="0" onchange="calcularPontuacao()"> Não
                             </td>
                             <td>
-                                <input type="radio" name="livro_ano1" value="10" onchange="calcularPontuacao()"> Sim
-                                <input type="radio" name="livro_ano1" value="0" onchange="calcularPontuacao()"> Não
+                                <input type="radio" name="Livro do Ano" value="10" onchange="calcularPontuacao()"> Sim
+                                <input type="radio" name="Livro do Ano" value="0" onchange="calcularPontuacao()"> Não
                             </td>
-                            <td><input type="text" name="pontuacao1" readonly></td>
+                            <td><input type="text" name="Pontuação" readonly></td>
                         </tr>
                     </table>
                     <button onclick="enviarFormulario()">Enviar Dados</button>
@@ -183,7 +184,7 @@
         <div class="unit-info">
             <h3>Preenchimento de Dados</h3>
             <div class="form-scroll">
-                <form id="formulario" onsubmit="return false;">
+                <form id="formularioAguiaDeOuro" onsubmit="return false;">
                     <table class="form-table" id="tabela-dados">
                         <tr>
                             <th>Desbravador</th>
@@ -199,46 +200,46 @@
                             <th>Pontuação</th>
                         </tr>
                         <tr>
-                            <td><input type="text" name="desbravador1" placeholder="Nome do Desbravador 1"></td>
+                            <td><input type="text" name="Desbravador" placeholder="Nome do Desbravador"></td>
                             <td>
-                                <input type="radio" name="presenca1" value="10" onchange="calcularPontuacao()"> Sim
-                                <input type="radio" name="presenca1" value="0" onchange="calcularPontuacao()"> Não
+                                <input type="radio" name="Presenca" value="10" onchange="calcularPontuacao()"> Sim
+                                <input type="radio" name="Presenca" value="0" onchange="calcularPontuacao()"> Não
                             </td>
                             <td>
-                                <input type="radio" name="pontualidade1" value="10" onchange="calcularPontuacao()"> Sim
-                                <input type="radio" name="pontualidade1" value="5" onchange="calcularPontuacao()"> Chegou Atrasado
-                                <input type="radio" name="pontualidade1" value="0" onchange="calcularPontuacao()"> Não
+                                <input type="radio" name="Pontualidade" value="10" onchange="calcularPontuacao()"> Sim
+                                <input type="radio" name="Pontualidade" value="5" onchange="calcularPontuacao()"> Chegou Atrasado
+                                <input type="radio" name="Pontualidade" value="0" onchange="calcularPontuacao()"> Não
                             </td>
                             <td>
-                                <input type="radio" name="uniforme1" value="10" onchange="calcularPontuacao()"> Sim
-                                <input type="radio" name="uniforme1" value="5" onchange="calcularPontuacao()"> Incompleto
-                                <input type="radio" name="uniforme1" value="0" onchange="calcularPontuacao()"> Não
+                                <input type="radio" name="Uniforme Completo" value="10" onchange="calcularPontuacao()"> Sim
+                                <input type="radio" name="Uniforme Completo" value="5" onchange="calcularPontuacao()"> Incompleto
+                                <input type="radio" name="Uniforme Completo" value="0" onchange="calcularPontuacao()"> Não
                             </td>
                             <td>
-                                <input type="radio" name="biblia1" value="10" onchange="calcularPontuacao()"> Sim
-                                <input type="radio" name="biblia1" value="0" onchange="calcularPontuacao()"> Não
+                                <input type="radio" name="Bíblia" value="10" onchange="calcularPontuacao()"> Sim
+                                <input type="radio" name="Bíblia" value="0" onchange="calcularPontuacao()"> Não
                             </td>
                             <td>
-                                <input type="radio" name="pequeno_grupo1" value="10" onchange="calcularPontuacao()"> Sim
-                                <input type="radio" name="pequeno_grupo1" value="0" onchange="calcularPontuacao()"> Não
+                                <input type="radio" name="Pequeno Grupo" value="10" onchange="calcularPontuacao()"> Sim
+                                <input type="radio" name="Pequeno Grupo" value="0" onchange="calcularPontuacao()"> Não
                             </td>
                             <td>
-                                <input type="radio" name="classe_biblica1" value="10" onchange="calcularPontuacao()"> Sim
-                                <input type="radio" name="classe_biblica1" value="0" onchange="calcularPontuacao()"> Não
+                                <input type="radio" name="Classe Bíblica" value="10" onchange="calcularPontuacao()"> Sim
+                                <input type="radio" name="Classe Bíblica" value="0" onchange="calcularPontuacao()"> Não
                             </td>
                             <td>
-                                <input type="radio" name="ano_biblico1" value="10" onchange="calcularPontuacao()"> Sim
-                                <input type="radio" name="ano_biblico1" value="0" onchange="calcularPontuacao()"> Não
+                                <input type="radio" name="Ano Bíblico" value="10" onchange="calcularPontuacao()"> Sim
+                                <input type="radio" name="Ano Bíblico" value="0" onchange="calcularPontuacao()"> Não
                             </td>
                             <td>
-                                <input type="radio" name="visita1" value="10" onchange="calcularPontuacao()"> Sim
-                                <input type="radio" name="visita1" value="0" onchange="calcularPontuacao()"> Não
+                                <input type="radio" name="Visita" value="10" onchange="calcularPontuacao()"> Sim
+                                <input type="radio" name="Visita" value="0" onchange="calcularPontuacao()"> Não
                             </td>
                             <td>
-                                <input type="radio" name="livro_ano1" value="10" onchange="calcularPontuacao()"> Sim
-                                <input type="radio" name="livro_ano1" value="0" onchange="calcularPontuacao()"> Não
+                                <input type="radio" name="Livro do Ano" value="10" onchange="calcularPontuacao()"> Sim
+                                <input type="radio" name="Livro do Ano" value="0" onchange="calcularPontuacao()"> Não
                             </td>
-                            <td><input type="text" name="pontuacao1" readonly></td>
+                            <td><input type="text" name="Pontuação" readonly></td>
                         </tr>
                     </table>
                     <button onclick="enviarFormulario()">Enviar Dados</button>
@@ -330,7 +331,7 @@
         <div class="unit-info">
             <h3>Preenchimento de Dados</h3>
             <div class="form-scroll">
-                <form id="formulario" onsubmit="return false;">
+                <form id="formularioAguiaDeFe" onsubmit="return false;">
                     <table class="form-table" id="tabela-dados">
                         <tr>
                             <th>Desbravador</th>
@@ -346,46 +347,46 @@
                             <th>Pontuação</th>
                         </tr>
                         <tr>
-                            <td><input type="text" name="desbravador1" placeholder="Nome do Desbravador 1"></td>
+                            <td><input type="text" name="Desbravador" placeholder="Nome do Desbravador"></td>
                             <td>
-                                <input type="radio" name="presenca1" value="10" onchange="calcularPontuacao()"> Sim
-                                <input type="radio" name="presenca1" value="0" onchange="calcularPontuacao()"> Não
+                                <input type="radio" name="Presenca" value="10" onchange="calcularPontuacao()"> Sim
+                                <input type="radio" name="Presenca" value="0" onchange="calcularPontuacao()"> Não
                             </td>
                             <td>
-                                <input type="radio" name="pontualidade1" value="10" onchange="calcularPontuacao()"> Sim
-                                <input type="radio" name="pontualidade1" value="5" onchange="calcularPontuacao()"> Chegou Atrasado
-                                <input type="radio" name="pontualidade1" value="0" onchange="calcularPontuacao()"> Não
+                                <input type="radio" name="Pontualidade" value="10" onchange="calcularPontuacao()"> Sim
+                                <input type="radio" name="Pontualidade" value="5" onchange="calcularPontuacao()"> Chegou Atrasado
+                                <input type="radio" name="Pontualidade" value="0" onchange="calcularPontuacao()"> Não
                             </td>
                             <td>
-                                <input type="radio" name="uniforme1" value="10" onchange="calcularPontuacao()"> Sim
-                                <input type="radio" name="uniforme1" value="5" onchange="calcularPontuacao()"> Incompleto
-                                <input type="radio" name="uniforme1" value="0" onchange="calcularPontuacao()"> Não
+                                <input type="radio" name="Uniforme Completo" value="10" onchange="calcularPontuacao()"> Sim
+                                <input type="radio" name="Uniforme Completo" value="5" onchange="calcularPontuacao()"> Incompleto
+                                <input type="radio" name="Uniforme Completo" value="0" onchange="calcularPontuacao()"> Não
                             </td>
                             <td>
-                                <input type="radio" name="biblia1" value="10" onchange="calcularPontuacao()"> Sim
-                                <input type="radio" name="biblia1" value="0" onchange="calcularPontuacao()"> Não
+                                <input type="radio" name="Bíblia" value="10" onchange="calcularPontuacao()"> Sim
+                                <input type="radio" name="Bíblia" value="0" onchange="calcularPontuacao()"> Não
                             </td>
                             <td>
-                                <input type="radio" name="pequeno_grupo1" value="10" onchange="calcularPontuacao()"> Sim
-                                <input type="radio" name="pequeno_grupo1" value="0" onchange="calcularPontuacao()"> Não
+                                <input type="radio" name="Pequeno Grupo" value="10" onchange="calcularPontuacao()"> Sim
+                                <input type="radio" name="Pequeno Grupo" value="0" onchange="calcularPontuacao()"> Não
                             </td>
                             <td>
-                                <input type="radio" name="classe_biblica1" value="10" onchange="calcularPontuacao()"> Sim
-                                <input type="radio" name="classe_biblica1" value="0" onchange="calcularPontuacao()"> Não
+                                <input type="radio" name="Classe Bíblica" value="10" onchange="calcularPontuacao()"> Sim
+                                <input type="radio" name="Classe Bíblica" value="0" onchange="calcularPontuacao()"> Não
                             </td>
                             <td>
-                                <input type="radio" name="ano_biblico1" value="10" onchange="calcularPontuacao()"> Sim
-                                <input type="radio" name="ano_biblico1" value="0" onchange="calcularPontuacao()"> Não
+                                <input type="radio" name="Ano Bíblico" value="10" onchange="calcularPontuacao()"> Sim
+                                <input type="radio" name="Ano Bíblico" value="0" onchange="calcularPontuacao()"> Não
                             </td>
                             <td>
-                                <input type="radio" name="visita1" value="10" onchange="calcularPontuacao()"> Sim
-                                <input type="radio" name="visita1" value="0" onchange="calcularPontuacao()"> Não
+                                <input type="radio" name="Visita" value="10" onchange="calcularPontuacao()"> Sim
+                                <input type="radio" name="Visita" value="0" onchange="calcularPontuacao()"> Não
                             </td>
                             <td>
-                                <input type="radio" name="livro_ano1" value="10" onchange="calcularPontuacao()"> Sim
-                                <input type="radio" name="livro_ano1" value="0" onchange="calcularPontuacao()"> Não
+                                <input type="radio" name="Livro do Ano" value="10" onchange="calcularPontuacao()"> Sim
+                                <input type="radio" name="Livro do Ano" value="0" onchange="calcularPontuacao()"> Não
                             </td>
-                            <td><input type="text" name="pontuacao1" readonly></td>
+                            <td><input type="text" name="Pontuação" readonly></td>
                         </tr>
                     </table>
                     <button onclick="enviarFormulario()">Enviar Dados</button>
@@ -463,7 +464,7 @@
         <div class="unit-info">
             <h3>Preenchimento de Dados</h3>
             <div class="form-scroll">
-                <form id="formulario" onsubmit="return false;">
+                <form id="formularioFalcoesDourado" onsubmit="return false;">
                     <table class="form-table" id="tabela-dados">
                         <tr>
                             <th>Desbravador</th>
@@ -479,46 +480,46 @@
                             <th>Pontuação</th>
                         </tr>
                         <tr>
-                            <td><input type="text" name="desbravador1" placeholder="Nome do Desbravador 1"></td>
+                            <td><input type="text" name="Desbravador" placeholder="Nome do Desbravador"></td>
                             <td>
-                                <input type="radio" name="presenca1" value="10" onchange="calcularPontuacao()"> Sim
-                                <input type="radio" name="presenca1" value="0" onchange="calcularPontuacao()"> Não
+                                <input type="radio" name="Presenca" value="10" onchange="calcularPontuacao()"> Sim
+                                <input type="radio" name="Presenca" value="0" onchange="calcularPontuacao()"> Não
                             </td>
                             <td>
-                                <input type="radio" name="pontualidade1" value="10" onchange="calcularPontuacao()"> Sim
-                                <input type="radio" name="pontualidade1" value="5" onchange="calcularPontuacao()"> Chegou Atrasado
-                                <input type="radio" name="pontualidade1" value="0" onchange="calcularPontuacao()"> Não
+                                <input type="radio" name="Pontualidade" value="10" onchange="calcularPontuacao()"> Sim
+                                <input type="radio" name="Pontualidade" value="5" onchange="calcularPontuacao()"> Chegou Atrasado
+                                <input type="radio" name="Pontualidade" value="0" onchange="calcularPontuacao()"> Não
                             </td>
                             <td>
-                                <input type="radio" name="uniforme1" value="10" onchange="calcularPontuacao()"> Sim
-                                <input type="radio" name="uniforme1" value="5" onchange="calcularPontuacao()"> Incompleto
-                                <input type="radio" name="uniforme1" value="0" onchange="calcularPontuacao()"> Não
+                                <input type="radio" name="Uniforme Completo" value="10" onchange="calcularPontuacao()"> Sim
+                                <input type="radio" name="Uniforme Completo" value="5" onchange="calcularPontuacao()"> Incompleto
+                                <input type="radio" name="Uniforme Completo" value="0" onchange="calcularPontuacao()"> Não
                             </td>
                             <td>
-                                <input type="radio" name="biblia1" value="10" onchange="calcularPontuacao()"> Sim
-                                <input type="radio" name="biblia1" value="0" onchange="calcularPontuacao()"> Não
+                                <input type="radio" name="Bíblia" value="10" onchange="calcularPontuacao()"> Sim
+                                <input type="radio" name="Bíblia" value="0" onchange="calcularPontuacao()"> Não
                             </td>
                             <td>
-                                <input type="radio" name="pequeno_grupo1" value="10" onchange="calcularPontuacao()"> Sim
-                                <input type="radio" name="pequeno_grupo1" value="0" onchange="calcularPontuacao()"> Não
+                                <input type="radio" name="Pequeno Grupo" value="10" onchange="calcularPontuacao()"> Sim
+                                <input type="radio" name="Pequeno Grupo" value="0" onchange="calcularPontuacao()"> Não
                             </td>
                             <td>
-                                <input type="radio" name="classe_biblica1" value="10" onchange="calcularPontuacao()"> Sim
-                                <input type="radio" name="classe_biblica1" value="0" onchange="calcularPontuacao()"> Não
+                                <input type="radio" name="Classe Bíblica" value="10" onchange="calcularPontuacao()"> Sim
+                                <input type="radio" name="Classe Bíblica" value="0" onchange="calcularPontuacao()"> Não
                             </td>
                             <td>
-                                <input type="radio" name="ano_biblico1" value="10" onchange="calcularPontuacao()"> Sim
-                                <input type="radio" name="ano_biblico1" value="0" onchange="calcularPontuacao()"> Não
+                                <input type="radio" name="Ano Bíblico" value="10" onchange="calcularPontuacao()"> Sim
+                                <input type="radio" name="Ano Bíblico" value="0" onchange="calcularPontuacao()"> Não
                             </td>
                             <td>
-                                <input type="radio" name="visita1" value="10" onchange="calcularPontuacao()"> Sim
-                                <input type="radio" name="visita1" value="0" onchange="calcularPontuacao()"> Não
+                                <input type="radio" name="Visita" value="10" onchange="calcularPontuacao()"> Sim
+                                <input type="radio" name="Visita" value="0" onchange="calcularPontuacao()"> Não
                             </td>
                             <td>
-                                <input type="radio" name="livro_ano1" value="10" onchange="calcularPontuacao()"> Sim
-                                <input type="radio" name="livro_ano1" value="0" onchange="calcularPontuacao()"> Não
+                                <input type="radio" name="Livro do Ano" value="10" onchange="calcularPontuacao()"> Sim
+                                <input type="radio" name="Livro do Ano" value="0" onchange="calcularPontuacao()"> Não
                             </td>
-                            <td><input type="text" name="pontuacao1" readonly></td>
+                            <td><input type="text" name="Pontuação" readonly></td>
                         </tr>
                     </table>
                     <button onclick="enviarFormulario()">Enviar Dados</button>
@@ -603,7 +604,7 @@
         <div class="unit-info">
             <h3>Preenchimento de Dados</h3>
             <div class="form-scroll">
-                <form id="formulario" onsubmit="return false;">
+                <form id="formularioFalcoesReais" onsubmit="return false;">
                     <table class="form-table" id="tabela-dados">
                         <tr>
                             <th>Desbravador</th>
@@ -619,46 +620,46 @@
                             <th>Pontuação</th>
                         </tr>
                         <tr>
-                            <td><input type="text" name="desbravador1" placeholder="Nome do Desbravador 1"></td>
+                            <td><input type="text" name="Desbravador" placeholder="Nome do Desbravador"></td>
                             <td>
-                                <input type="radio" name="presenca1" value="10" onchange="calcularPontuacao()"> Sim
-                                <input type="radio" name="presenca1" value="0" onchange="calcularPontuacao()"> Não
+                                <input type="radio" name="Presenca" value="10" onchange="calcularPontuacao()"> Sim
+                                <input type="radio" name="Presenca" value="0" onchange="calcularPontuacao()"> Não
                             </td>
                             <td>
-                                <input type="radio" name="pontualidade1" value="10" onchange="calcularPontuacao()"> Sim
-                                <input type="radio" name="pontualidade1" value="5" onchange="calcularPontuacao()"> Chegou Atrasado
-                                <input type="radio" name="pontualidade1" value="0" onchange="calcularPontuacao()"> Não
+                                <input type="radio" name="Pontualidade" value="10" onchange="calcularPontuacao()"> Sim
+                                <input type="radio" name="Pontualidade" value="5" onchange="calcularPontuacao()"> Chegou Atrasado
+                                <input type="radio" name="Pontualidade" value="0" onchange="calcularPontuacao()"> Não
                             </td>
                             <td>
-                                <input type="radio" name="uniforme1" value="10" onchange="calcularPontuacao()"> Sim
-                                <input type="radio" name="uniforme1" value="5" onchange="calcularPontuacao()"> Incompleto
-                                <input type="radio" name="uniforme1" value="0" onchange="calcularPontuacao()"> Não
+                                <input type="radio" name="Uniforme Completo" value="10" onchange="calcularPontuacao()"> Sim
+                                <input type="radio" name="Uniforme Completo" value="5" onchange="calcularPontuacao()"> Incompleto
+                                <input type="radio" name="Uniforme Completo" value="0" onchange="calcularPontuacao()"> Não
                             </td>
                             <td>
-                                <input type="radio" name="biblia1" value="10" onchange="calcularPontuacao()"> Sim
-                                <input type="radio" name="biblia1" value="0" onchange="calcularPontuacao()"> Não
+                                <input type="radio" name="Bíblia" value="10" onchange="calcularPontuacao()"> Sim
+                                <input type="radio" name="Bíblia" value="0" onchange="calcularPontuacao()"> Não
                             </td>
                             <td>
-                                <input type="radio" name="pequeno_grupo1" value="10" onchange="calcularPontuacao()"> Sim
-                                <input type="radio" name="pequeno_grupo1" value="0" onchange="calcularPontuacao()"> Não
+                                <input type="radio" name="Pequeno Grupo" value="10" onchange="calcularPontuacao()"> Sim
+                                <input type="radio" name="Pequeno Grupo" value="0" onchange="calcularPontuacao()"> Não
                             </td>
                             <td>
-                                <input type="radio" name="classe_biblica1" value="10" onchange="calcularPontuacao()"> Sim
-                                <input type="radio" name="classe_biblica1" value="0" onchange="calcularPontuacao()"> Não
+                                <input type="radio" name="Classe Bíblica" value="10" onchange="calcularPontuacao()"> Sim
+                                <input type="radio" name="Classe Bíblica" value="0" onchange="calcularPontuacao()"> Não
                             </td>
                             <td>
-                                <input type="radio" name="ano_biblico1" value="10" onchange="calcularPontuacao()"> Sim
-                                <input type="radio" name="ano_biblico1" value="0" onchange="calcularPontuacao()"> Não
+                                <input type="radio" name="Ano Bíblico" value="10" onchange="calcularPontuacao()"> Sim
+                                <input type="radio" name="Ano Bíblico" value="0" onchange="calcularPontuacao()"> Não
                             </td>
                             <td>
-                                <input type="radio" name="visita1" value="10" onchange="calcularPontuacao()"> Sim
-                                <input type="radio" name="visita1" value="0" onchange="calcularPontuacao()"> Não
+                                <input type="radio" name="Visita" value="10" onchange="calcularPontuacao()"> Sim
+                                <input type="radio" name="Visita" value="0" onchange="calcularPontuacao()"> Não
                             </td>
                             <td>
-                                <input type="radio" name="livro_ano1" value="10" onchange="calcularPontuacao()"> Sim
-                                <input type="radio" name="livro_ano1" value="0" onchange="calcularPontuacao()"> Não
+                                <input type="radio" name="Livro do Ano" value="10" onchange="calcularPontuacao()"> Sim
+                                <input type="radio" name="Livro do Ano" value="0" onchange="calcularPontuacao()"> Não
                             </td>
-                            <td><input type="text" name="pontuacao1" readonly></td>
+                            <td><input type="text" name="Pontuação" readonly></td>
                         </tr>
                     </table>
                     <button onclick="enviarFormulario()">Enviar Dados</button>
@@ -736,7 +737,7 @@
         <div class="unit-info">
             <h3>Preenchimento de Dados</h3>
             <div class="form-scroll">
-                <form id="formulario" onsubmit="return false;">
+                <form id="formularioFenix" onsubmit="return false;">
                     <table class="form-table" id="tabela-dados">
                         <tr>
                             <th>Desbravador</th>
@@ -752,46 +753,46 @@
                             <th>Pontuação</th>
                         </tr>
                         <tr>
-                            <td><input type="text" name="desbravador1" placeholder="Nome do Desbravador 1"></td>
+                            <td><input type="text" name="Desbravador" placeholder="Nome do Desbravador"></td>
                             <td>
-                                <input type="radio" name="presenca1" value="10" onchange="calcularPontuacao()"> Sim
-                                <input type="radio" name="presenca1" value="0" onchange="calcularPontuacao()"> Não
+                                <input type="radio" name="Presenca" value="10" onchange="calcularPontuacao()"> Sim
+                                <input type="radio" name="Presenca" value="0" onchange="calcularPontuacao()"> Não
                             </td>
                             <td>
-                                <input type="radio" name="pontualidade1" value="10" onchange="calcularPontuacao()"> Sim
-                                <input type="radio" name="pontualidade1" value="5" onchange="calcularPontuacao()"> Chegou Atrasado
-                                <input type="radio" name="pontualidade1" value="0" onchange="calcularPontuacao()"> Não
+                                <input type="radio" name="Pontualidade" value="10" onchange="calcularPontuacao()"> Sim
+                                <input type="radio" name="Pontualidade" value="5" onchange="calcularPontuacao()"> Chegou Atrasado
+                                <input type="radio" name="Pontualidade" value="0" onchange="calcularPontuacao()"> Não
                             </td>
                             <td>
-                                <input type="radio" name="uniforme1" value="10" onchange="calcularPontuacao()"> Sim
-                                <input type="radio" name="uniforme1" value="5" onchange="calcularPontuacao()"> Incompleto
-                                <input type="radio" name="uniforme1" value="0" onchange="calcularPontuacao()"> Não
+                                <input type="radio" name="Uniforme Completo" value="10" onchange="calcularPontuacao()"> Sim
+                                <input type="radio" name="Uniforme Completo" value="5" onchange="calcularPontuacao()"> Incompleto
+                                <input type="radio" name="Uniforme Completo" value="0" onchange="calcularPontuacao()"> Não
                             </td>
                             <td>
-                                <input type="radio" name="biblia1" value="10" onchange="calcularPontuacao()"> Sim
-                                <input type="radio" name="biblia1" value="0" onchange="calcularPontuacao()"> Não
+                                <input type="radio" name="Bíblia" value="10" onchange="calcularPontuacao()"> Sim
+                                <input type="radio" name="Bíblia" value="0" onchange="calcularPontuacao()"> Não
                             </td>
                             <td>
-                                <input type="radio" name="pequeno_grupo1" value="10" onchange="calcularPontuacao()"> Sim
-                                <input type="radio" name="pequeno_grupo1" value="0" onchange="calcularPontuacao()"> Não
+                                <input type="radio" name="Pequeno Grupo" value="10" onchange="calcularPontuacao()"> Sim
+                                <input type="radio" name="Pequeno Grupo" value="0" onchange="calcularPontuacao()"> Não
                             </td>
                             <td>
-                                <input type="radio" name="classe_biblica1" value="10" onchange="calcularPontuacao()"> Sim
-                                <input type="radio" name="classe_biblica1" value="0" onchange="calcularPontuacao()"> Não
+                                <input type="radio" name="Classe Bíblica" value="10" onchange="calcularPontuacao()"> Sim
+                                <input type="radio" name="Classe Bíblica" value="0" onchange="calcularPontuacao()"> Não
                             </td>
                             <td>
-                                <input type="radio" name="ano_biblico1" value="10" onchange="calcularPontuacao()"> Sim
-                                <input type="radio" name="ano_biblico1" value="0" onchange="calcularPontuacao()"> Não
+                                <input type="radio" name="Ano Bíblico" value="10" onchange="calcularPontuacao()"> Sim
+                                <input type="radio" name="Ano Bíblico" value="0" onchange="calcularPontuacao()"> Não
                             </td>
                             <td>
-                                <input type="radio" name="visita1" value="10" onchange="calcularPontuacao()"> Sim
-                                <input type="radio" name="visita1" value="0" onchange="calcularPontuacao()"> Não
+                                <input type="radio" name="Visita" value="10" onchange="calcularPontuacao()"> Sim
+                                <input type="radio" name="Visita" value="0" onchange="calcularPontuacao()"> Não
                             </td>
                             <td>
-                                <input type="radio" name="livro_ano1" value="10" onchange="calcularPontuacao()"> Sim
-                                <input type="radio" name="livro_ano1" value="0" onchange="calcularPontuacao()"> Não
+                                <input type="radio" name="Livro do Ano" value="10" onchange="calcularPontuacao()"> Sim
+                                <input type="radio" name="Livro do Ano" value="0" onchange="calcularPontuacao()"> Não
                             </td>
-                            <td><input type="text" name="pontuacao1" readonly></td>
+                            <td><input type="text" name="Pontuação" readonly></td>
                         </tr>
                     </table>
                     <button onclick="enviarFormulario()">Enviar Dados</button>
@@ -886,9 +887,6 @@
     </footer>
 
     <script>
-        
-
-
         // Função para calcular a pontuação
         function calcularPontuacao() {
             // Seleciona todos os campos de pontuação relevantes no formulário
@@ -904,7 +902,7 @@
                 });
 
                 // Atualiza o campo de pontuação da linha
-                const campoPontuacao = linha.querySelector('input[name^="pontuacao"]');
+                const campoPontuacao = linha.querySelector('input[name^="Pontuação"]');
                 if (campoPontuacao) {
                     campoPontuacao.value = pontos;
                 }
@@ -929,6 +927,137 @@
             var modal = document.getElementById("imagem-expandida");
             modal.style.display = "none";
         }
+
+
+        //--------------- ENVIO DE INFORMAÇÕES PRO GOOGLE DRIVE
+        const hoje = new Date().toLocaleDateString('pt-BR').split('/').reverse().join('-');
+        document.getElementById('Data Emissão').value = hoje;
+
+        document.getElementById('formularioAguiaDaEsperanca').onsubmit = function(e) {
+            e.preventDefault();
+            var formData = new FormData(this);
+            var object = {};
+            formData.forEach((value, key) => {object[key] = value});
+            var json = JSON.stringify(object);
+
+            console.log('json >>> ', json)
+
+            fetch('https://sheetdb.io/api/v1/eanckad8k2wzy', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: json
+            })
+                .then(response => response.json())
+                .then(data => console.log(data))
+                .catch(error => console.error('Erro:', error));
+        };
+
+        document.getElementById('formularioFenix').onsubmit = function(e) {
+            e.preventDefault();
+            var formData = new FormData(this);
+            var object = {};
+            formData.forEach((value, key) => {object[key] = value});
+            var json = JSON.stringify(object);
+
+            console.log('json >>> ', json)
+
+            fetch('https://sheetdb.io/api/v1/eanckad8k2wzy', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: json
+            })
+                .then(response => response.json())
+                .then(data => console.log(data))
+                .catch(error => console.error('Erro:', error));
+        };
+
+        document.getElementById('formularioAguiaDeFe').onsubmit = function(e) {
+            e.preventDefault();
+            var formData = new FormData(this);
+            var object = {};
+            formData.forEach((value, key) => {object[key] = value});
+            var json = JSON.stringify(object);
+
+            console.log('json >>> ', json)
+
+            fetch('https://sheetdb.io/api/v1/eanckad8k2wzy', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: json
+            })
+                .then(response => response.json())
+                .then(data => console.log(data))
+                .catch(error => console.error('Erro:', error));
+        };
+
+        document.getElementById('formularioAguiaDeOuro').onsubmit = function(e) {
+            e.preventDefault();
+            var formData = new FormData(this);
+            var object = {};
+            formData.forEach((value, key) => {object[key] = value});
+            var json = JSON.stringify(object);
+
+            console.log('json >>> ', json)
+
+            fetch('https://sheetdb.io/api/v1/eanckad8k2wzy', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: json
+            })
+                .then(response => response.json())
+                .then(data => console.log(data))
+                .catch(error => console.error('Erro:', error));
+        };
+
+        document.getElementById('formularioFalcoesDourado').onsubmit = function(e) {
+            e.preventDefault();
+            var formData = new FormData(this);
+            var object = {};
+            formData.forEach((value, key) => {object[key] = value});
+            var json = JSON.stringify(object);
+
+            console.log('json >>> ', json)
+
+            fetch('https://sheetdb.io/api/v1/eanckad8k2wzy', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: json
+            })
+                .then(response => response.json())
+                .then(data => console.log(data))
+                .catch(error => console.error('Erro:', error));
+        };
+
+        document.getElementById('formularioFalcoesReais').onsubmit = function(e) {
+            e.preventDefault();
+            var formData = new FormData(this);
+            var object = {};
+            formData.forEach((value, key) => {object[key] = value});
+            var json = JSON.stringify(object);
+
+            console.log('json >>> ', json)
+
+            fetch('https://sheetdb.io/api/v1/eanckad8k2wzy', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: json
+            })
+                .then(response => response.json())
+                .then(data => console.log(data))
+                .catch(error => console.error('Erro:', error));
+        };
     </script>
 
 </body>
