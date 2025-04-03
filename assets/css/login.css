@@ -17,8 +17,8 @@
 .navbar {
     position: fixed;
     top: 0;
-    left: 30%;
-    transform: translateX(-30%);
+    left: 50%;
+    transform: translateX(-50%);
     width: auto;
     background-color: rgb(182, 6, 6);
     box-shadow: 0 2px 5px rgb(0, 0, 0);
@@ -133,7 +133,7 @@ button:hover {
    Responsividade para dispositivos menores
    ============================== */
 
-@media (max-width: 768px) {
+@media (max-width: 300px) {
     .navbar {
         width: 100%;
         border-radius: 0;
@@ -152,7 +152,7 @@ button:hover {
     }
 }
 
-@media (max-width: 430px) {
+@media (max-width: 600px) {
     .menu {
         flex-direction: column;
         text-align: center;
@@ -165,7 +165,7 @@ button:hover {
 
     .login-box {
         width: 90%;
-        max-width: 1180px;
+        max-width: 300px;
         padding: 15px;
     }
 
