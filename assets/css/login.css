@@ -1,85 +1,179 @@
 /* ==============================
-   Estilos Gerais
+   Configurações Globais
    ============================== */
-body {
-    margin: 0;
+
+   body {
+    background: url('..assets/img/desb.png') no-repeat center center fixed;
+    background-size: cover;
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 /* ==============================
-   Estilos da Barra de Navegação
+   Estilização da Barra de Navegação
    ============================== */
+
 .navbar {
     position: fixed;
     top: 0;
-    left: 0;
-    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
     background-color: rgb(182, 6, 6);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 5px rgb(0, 0, 0);
     z-index: 1000;
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Deixa os itens do menu lado a lado */
+    justify-content: center;
     padding: 10px 20px;
+    border-radius: 10px;
 }
 
-/* Ajuste do logotipo */
-.navbar img {
-    height: 50px; /* Ajuste conforme necessário */
-}
-
-/* Estilização do menu */
+/* Estiliza o menu de navegação */
 .menu {
     list-style: none;
-    display: flex; /* Deixa os itens lado a lado */
-    gap: 15px; /* Espaçamento entre os itens */
-    padding: 0;
-    margin: 0;
+    display: flex;
+    gap: 15px;
 }
 
-/* Estilização dos itens do menu */
 .menu li {
     display: inline;
 }
 
-/* Estilização dos links do menu */
 .menu a {
     text-decoration: none;
-    color: white;
+    color: #fff;
     font-weight: bold;
     padding: 10px;
     transition: color 0.3s ease;
 }
 
-/* Efeito hover nos links */
+/* Efeito ao passar o mouse */
 .menu a:hover {
     color: yellow;
 }
 
 /* ==============================
-   Ajustes Responsivos
+   Estilização do Container de Login
    ============================== */
-@media (max-width: 600px) {
-    .menu {
-        flex-wrap: wrap; /* Permite quebrar linha caso a tela seja muito pequena */
-        justify-content: center; /* Centraliza os itens */
-        gap: 8px; /* Reduz o espaço entre os itens */
-    }
 
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding-top: 80px;
+}
+
+/* Caixa de Login */
+.login-box {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 300px;
+}
+
+.login-box h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* ==============================
+   Campos de Entrada e Botão
+   ============================== */
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-weight: bold;
+    color: #555;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #fd0b0b;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Botão de Login */
+button {
+    width: 100%;
+    padding: 10px;
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+/* Efeito ao passar o mouse */
+button:hover {
+    background: darkred;
+}
+
+/* Mensagem de erro */
+#errorMessage {
+    color: red;
+    display: none;
+    font-size: 14px;
+}
+
+/* ==============================
+   Responsividade para dispositivos menores
+   ============================== */
+
+@media (max-width: 768px) {
     .navbar {
-        flex-direction: column; /* Deixa os itens empilhados se a tela for muito estreita */
-        text-align: center;
+        width: 100%;
+        border-radius: 0;
         padding: 10px;
     }
 
-    .navbar img {
-        height: 40px; /* Reduz o tamanho do logotipo */
-        margin-bottom: 5px;
+    .menu {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
     }
-   /* Ajuste para o conteúdo não ficar escondido atrás do menu */
-.main-content {
-    margin-top: 80px; /* Garante que o conteúdo fique abaixo do menu */
-    padding: 20px;
+
+    .login-box {
+        width: 90%;
+        max-width: 350px;
+    }
 }
 
+@media (max-width: 480px) {
+    .menu {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .navbar {
+        padding: 10px 5px;
+    }
+
+    .login-box {
+        width: 90%;
+        max-width: 300px;
+        padding: 15px;
+    }
+
+    .input-group input {
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 14px;
+    }
 }
