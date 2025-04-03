@@ -1,4 +1,12 @@
 /* ==============================
+   Estilos Gerais
+   ============================== */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* ==============================
    Estilos da Barra de Navegação
    ============================== */
 .navbar {
@@ -11,7 +19,7 @@
     z-index: 1000;
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Alinha os itens do menu lado a lado */
+    justify-content: space-between; /* Deixa os itens do menu lado a lado */
     padding: 10px 20px;
 }
 
@@ -25,9 +33,16 @@
     list-style: none;
     display: flex; /* Deixa os itens lado a lado */
     gap: 15px; /* Espaçamento entre os itens */
+    padding: 0;
+    margin: 0;
 }
 
-/* Estilização dos links */
+/* Estilização dos itens do menu */
+.menu li {
+    display: inline;
+}
+
+/* Estilização dos links do menu */
 .menu a {
     text-decoration: none;
     color: white;
@@ -36,7 +51,7 @@
     transition: color 0.3s ease;
 }
 
-/* Hover dos links */
+/* Efeito hover nos links */
 .menu a:hover {
     color: yellow;
 }
