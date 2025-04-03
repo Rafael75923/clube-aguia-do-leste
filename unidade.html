@@ -28,10 +28,26 @@
                 <li><a href="galeria.html">Galeria</a></li>
                 <li><a href="unidade.html">Unidade</a></li>
                 <li><a href="contatos.html">Contatos</a></li>
+                <button id="logoutButton">Sair</button>
             </ul>
         </nav>
         <h1>Cantinho da Unidade - Clube de Desbravadores</h1>
 </header>
+    <script>
+    // Verificar se o usuário está logado
+    const estaAutenticado = sessionStorage.getItem('estaAutenticado');
+
+    // Redirecionar para login se não estiver autenticado
+    if (!sessionStorage.getItem("estaAutenticado")) {
+        window.location.href = "login.html";
+    }
+</script>
+<script>
+    document.getElementById("logoutButton").addEventListener("click", function () {
+        sessionStorage.removeItem("estaAutenticado"); // Remove a autenticação
+        window.location.href = "login.html"; // Redireciona para a página de login
+    });
+</script>
     <section>
         <h2>Informações da Unidade</h2>
         <div class="unit-logo">
