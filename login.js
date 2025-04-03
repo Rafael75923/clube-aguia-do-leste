@@ -2,7 +2,7 @@ document.getElementById("loginForm").addEventListener("submit", function (event)
     event.preventDefault();
 
     const usuarioCorreto = "admin";
-    const senhaCorreta = "1234";
+    const senhaCorreta = "adl2025";
 
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
