@@ -133,7 +133,7 @@ button:hover {
    Responsividade para dispositivos menores
    ============================== */
 
-@media (max-width: 300px) {
+@media (max-width: 840px) {
     .navbar {
         width: 100%;
         border-radius: 0;
