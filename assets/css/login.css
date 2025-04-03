@@ -133,9 +133,9 @@ button:hover {
    Responsividade para dispositivos menores
    ============================== */
 
-@media (max-width: 768px) {
+@media (max-width: 730px) {
     .navbar {
-        width: 100%;
+        width: 80%;
         border-radius: 0;
         padding: 10px;
     }
@@ -147,7 +147,7 @@ button:hover {
     }
 
     .login-box {
-        width: 90%;
+        width: 80%;
         max-width: 350px;
     }
 }
@@ -164,7 +164,7 @@ button:hover {
     }
 
     .login-box {
-        width: 90%;
+        width: 80%;
         max-width: 300px;
         padding: 15px;
     }
