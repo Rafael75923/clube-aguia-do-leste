@@ -76,4 +76,10 @@ body {
         height: 40px; /* Reduz o tamanho do logotipo */
         margin-bottom: 5px;
     }
+   /* Ajuste para o conteúdo não ficar escondido atrás do menu */
+.main-content {
+    margin-top: 80px; /* Garante que o conteúdo fique abaixo do menu */
+    padding: 20px;
+}
+
 }
