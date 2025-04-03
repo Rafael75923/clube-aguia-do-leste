@@ -130,50 +130,67 @@ button:hover {
 }
 
 /* ==============================
-   Responsividade para dispositivos menores
+   Estilos da Barra de Navegação
    ============================== */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgb(182, 6, 6);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Alinha os itens do menu lado a lado */
+    padding: 10px 20px;
+}
 
-@media (max-width: 730px) {
+/* Ajuste do logotipo */
+.navbar img {
+    height: 50px; /* Ajuste conforme necessário */
+}
+
+/* Estilização do menu */
+.menu {
+    list-style: none;
+    display: flex; /* Deixa os itens lado a lado */
+    gap: 15px; /* Espaçamento entre os itens */
+}
+
+/* Estilização dos links */
+.menu a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    transition: color 0.3s ease;
+}
+
+/* Hover dos links */
+.menu a:hover {
+    color: yellow;
+}
+
+/* ==============================
+   Ajustes Responsivos
+   ============================== */
+@media (max-width: 600px) {
+    .menu {
+        flex-wrap: wrap; /* Permite quebrar linha caso a tela seja muito pequena */
+        justify-content: center; /* Centraliza os itens */
+        gap: 8px; /* Reduz o espaço entre os itens */
+    }
+
     .navbar {
-        width: 80%;
-        border-radius: 0;
+        flex-direction: column; /* Deixa os itens empilhados se a tela for muito estreita */
+        text-align: center;
         padding: 10px;
     }
 
-    .menu {
-        flex-direction: column;
-        text-align: center;
-        gap: 10px;
-    }
-
-    .login-box {
-        width: 80%;
-        max-width: 350px;
+    .navbar img {
+        height: 40px; /* Reduz o tamanho do logotipo */
+        margin-bottom: 5px;
     }
 }
 
-@media (max-width: 480px) {
-    .menu {
-        flex-direction: column;
-        text-align: center;
-        gap: 10px;
-    }
-
-    .navbar {
-        padding: 10px 5px;
-    }
-
-    .login-box {
-        width: 80%;
-        max-width: 300px;
-        padding: 15px;
-    }
-
-    .input-group input {
-        font-size: 14px;
-    }
-
-    button {
-        font-size: 14px;
-    }
-}
