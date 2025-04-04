@@ -40,4 +40,11 @@
     color: #555;
     margin: 5px 0;
   }
+  .destaque-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+  }
   
