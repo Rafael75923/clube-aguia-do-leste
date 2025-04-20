@@ -58,6 +58,13 @@
 
         <div class="unit-info">
             <h3>Preenchimento de Dados</h3>
+            <div class="form-top-info">
+                <label for="preenchidoPor">Preenchido por:</label>
+                <input type="text" id="preenchidoPor" name="preenchidoPor" placeholder="Seu nome aqui 😊" required>
+
+                <label for="dataEnvio">Data de envio:</label>
+                <input type="text" id="dataEnvio" name="dataEnvio" readonly>
+            </div>
             <div class="form-scroll">
                 <form id="formularioAguiaDaEsperanca" onsubmit="return false;">
                     <table class="form-table" id="tabela-dados">
@@ -199,6 +206,13 @@
 
         <div class="unit-info">
             <h3>Preenchimento de Dados</h3>
+            <div class="form-top-info">
+                <label for="preenchidoPor">Preenchido por:</label>
+                <input type="text" id="preenchidoPor" name="preenchidoPor" placeholder="Seu nome aqui 😊" required>
+
+                <label for="dataEnvio">Data de envio:</label>
+                <input type="text" id="dataEnvio" name="dataEnvio" readonly>
+            </div>
             <div class="form-scroll">
                 <form id="formularioAguiaDeOuro" onsubmit="return false;">
                     <table class="form-table" id="tabela-dados">
@@ -346,6 +360,13 @@
 
         <div class="unit-info">
             <h3>Preenchimento de Dados</h3>
+            <div class="form-top-info">
+                <label for="preenchidoPor">Preenchido por:</label>
+                <input type="text" id="preenchidoPor" name="preenchidoPor" placeholder="Seu nome aqui 😊" required>
+
+                <label for="dataEnvio">Data de envio:</label>
+                <input type="text" id="dataEnvio" name="dataEnvio" readonly>
+            </div>
             <div class="form-scroll">
                 <form id="formularioAguiaDeFe" onsubmit="return false;">
                     <table class="form-table" id="tabela-dados">
@@ -479,6 +500,13 @@
 
         <div class="unit-info">
             <h3>Preenchimento de Dados</h3>
+            <div class="form-top-info">
+                <label for="preenchidoPor">Preenchido por:</label>
+                <input type="text" id="preenchidoPor" name="preenchidoPor" placeholder="Seu nome aqui 😊" required>
+
+                <label for="dataEnvio">Data de envio:</label>
+                <input type="text" id="dataEnvio" name="dataEnvio" readonly>
+            </div>
             <div class="form-scroll">
                 <form id="formularioFalcoesDourado" onsubmit="return false;">
                     <table class="form-table" id="tabela-dados">
@@ -619,6 +647,13 @@
 
         <div class="unit-info">
             <h3>Preenchimento de Dados</h3>
+            <div class="form-top-info">
+                <label for="preenchidoPor">Preenchido por:</label>
+                <input type="text" id="preenchidoPor" name="preenchidoPor" placeholder="Seu nome aqui 😊" required>
+
+                <label for="dataEnvio">Data de envio:</label>
+                <input type="text" id="dataEnvio" name="dataEnvio" readonly>
+            </div>
             <div class="form-scroll">
                 <form id="formularioFalcoesReais" onsubmit="return false;">
                     <table class="form-table" id="tabela-dados">
@@ -752,6 +787,13 @@
 
         <div class="unit-info">
             <h3>Preenchimento de Dados</h3>
+            <div class="form-top-info">
+                <label for="preenchidoPor">Preenchido por:</label>
+                <input type="text" id="preenchidoPor" name="preenchidoPor" placeholder="Seu nome aqui 😊" required>
+
+                <label for="dataEnvio">Data de envio:</label>
+                <input type="text" id="dataEnvio" name="dataEnvio" readonly>
+            </div>
             <div class="form-scroll">
                 <form id="formularioFenix" onsubmit="return false;">
                     <table class="form-table" id="tabela-dados">
@@ -1074,6 +1116,11 @@
                 .then(data => console.log(data))
                 .catch(error => console.error('Erro:', error));
         };
+    window.onload = function () {
+        const dataAtual = new Date().toLocaleDateString('pt-BR');
+        document.getElementById("dataEnvio").value = dataAtual;
+    };
+
     </script>
 
 </body>
