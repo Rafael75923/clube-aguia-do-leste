@@ -4,15 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Galeria - Águia do Leste</title>
-  <link rel="stylesheet" href="assets/css/styles.css">
-  <link rel="stylesheet" href="assets/css/destaque.css">
-  <link rel="stylesheet" href="assets/css/ranking.css">
-  <link rel="stylesheet" href="assets/css/sobre.css">
-  <link rel="stylesheet" href="assets/css/loja.css">
-  <link rel="stylesheet" href="assets/css/galeria.css">
-  <link rel="stylesheet" href="assets/css/Unidade.css">
-  <link rel="stylesheet" href="assets/css/contato.css">
+  <meta name="description"
+    content="Site oficial do Clube de Desbravadores Águia do Leste, com informações sobre eventos, ranking e muito mais.">
+  <title>Home - Águia do Leste</title>
+  <link rel="stylesheet" href="assets/css/styles.css">   
+  <link rel="stylesheet" href="assets/css/galeria.css"> 
   <script src="assets/js/formulario.js" defer></script>
   <script src="assets/js/lightbox.js" defer></script>
   <script src="assets/js/scripts.js" defer></script>
@@ -25,7 +21,7 @@
       <ul class="menu">
         <li><a href="index.html">Início</a></li>
         <li><a href="sobre.html">Sobre</a></li>
-         <!-- <li><a href="loja.html">Loja</a></li> -->
+         <!--<li><a href="loja.html">Loja</a></li>-->
         <li><a href="galeria.html">Galeria</a></li>
         <li><a href="unidade.html">Unidade</a></li>
         <li><a href="contatos.html">Contatos</a></li>
@@ -36,31 +32,51 @@
   <section class="galeria">
     <h1>Galeria</h1>
     <p>Confira momentos marcantes do nosso clube!</p>
-
-    <div class="eventos">
-      <h2>Acampamento 2023 - Serra Dourada</h2>
-      <div class="evento-fotos">
-        <figure>
-          <img src="assets/img/img1.jpg" alt="Acampamento 2023" onclick="abrirLightbox(this)">
-          <figcaption>Montagem de barracas</figcaption>
-        </figure>
-        <figure>
-          <img src="assets/img/nos-amarras.JPG" alt="Nós e Amarras" onclick="abrirLightbox(this)">
-          <figcaption>Aula de nós</figcaption>
-        </figure>
+  
+    <div class="filtros">
+      <button onclick="filtrarImagens('acampamento')">Acampamento</button>
+      <button onclick="filtrarImagens('desfile')">Desfile</button>
+      <button onclick="filtrarImagens('todos')">Todos</button>
+    </div>
+  
+    <div class="grid-galeria">
+      <!-- Evento Acampamento 2023 -->
+      <div class="evento" data-categoria="acampamento">
+        <img src="assets/img/img1.jpg" alt="Acampamento 2023" onclick="abrirLightbox(this)">
+        <p>Montagem de barracas</p>
+      </div>
+      <div class="evento" data-categoria="acampamento">
+        <img src="assets/img/nos-amarras.JPG" alt="Nós e Amarras" onclick="abrirLightbox(this)">
+        <p>Aula de nós</p>
+      </div>
+      <!-- Evento Acampamento 2023 - Outra imagem -->
+      <div class="evento" data-categoria="acampamento">
+        <img src="assets/img/campo1.jpg" alt="Acampamento - Serra Dourada" onclick="abrirLightbox(this)">
+        <p>Vista do acampamento</p>
+      </div>
+      <!-- Evento Desfile 2024 -->
+      <div class="evento" data-categoria="desfile">
+        <img src="assets/img/desfile1.jpg" alt="Desfile 2024" onclick="abrirLightbox(this)">
+        <p>Marcha cívica</p>
+      </div>
+      <div class="evento" data-categoria="desfile">
+        <img src="assets/img/desfile2.jpg" alt="Desfile 2024 - Foto 2" onclick="abrirLightbox(this)">
+        <p>Desfile em Porto Velho</p>
+      </div>
+      <!-- Adicione mais eventos conforme necessário -->
+      <div class="evento" data-categoria="desfile">
+        <img src="assets/img/desfile3.jpg" alt="Desfile 2024 - Foto 3" onclick="abrirLightbox(this)">
+        <p>Detalhes do desfile</p>
       </div>
     </div>
-
-    <div class="eventos">
-      <h2>Desfile 2024 - Porto Velho</h2>
-      <div class="evento-fotos">
-        <figure>
-          <img src="assets/img/evento1.png" alt="Desfile 2024" onclick="abrirLightbox(this)">
-          <figcaption>Marcha cívica</figcaption>
-        </figure>
-      </div>
+  
+    <!-- Lightbox -->
+    <div id="imagem-expandida" class="imagem-expandida" onclick="fecharImagem()">
+      <img id="imagem-modal" src="" alt="Imagem Ampliada">
+      <p id="descricao-modal"></p>
     </div>
-
+  </section>
+  
     <!-- Lightbox -->
     <div id="imagem-expandida" class="imagem-expandida" onclick="fecharImagem()">
       <img id="imagem-modal" src="" alt="Imagem Ampliada">
@@ -84,7 +100,44 @@
       var modal = document.getElementById("imagem-expandida");
       modal.style.display = "none";
     }
+
+    function filtrarImagens(categoria) {
+      var eventos = document.querySelectorAll('.evento');
+      eventos.forEach(function(evento) {
+        if (categoria === 'todos' || evento.getAttribute('data-categoria') === categoria) {
+          evento.style.display = 'block';
+        } else {
+          evento.style.display = 'none';
+        }
+      });
+    }
   </script>
+  <script>
+    // Função para adicionar imagens à galeria
+    function adicionarImagens() {
+      var galeria = document.querySelector('.grid-galeria');
+      var novasImagens = [
+        { src: 'assets/img/campo2.jpg', alt: 'Acampamento 2023 - Foto 2', descricao: 'Montagem do campo' },
+        { src: 'assets/img/desfile4.jpg', alt: 'Desfile 2024 - Foto 4', descricao: 'Final do desfile' },
+        { src: 'assets/img/evento2.jpg', alt: 'Evento 2024', descricao: 'Momento de ação' }
+      ];
+  
+      novasImagens.forEach(function(imagem) {
+        var novoEvento = document.createElement('div');
+        novoEvento.classList.add('evento');
+        novoEvento.setAttribute('data-categoria', 'acampamento'); // ou 'desfile', dependendo da categoria
+        novoEvento.innerHTML = `
+          <img src="${imagem.src}" alt="${imagem.alt}" onclick="abrirLightbox(this)">
+          <p>${imagem.descricao}</p>
+        `;
+        galeria.appendChild(novoEvento);
+      });
+    }
+  
+    // Chama a função para adicionar as imagens ao carregar a página
+    window.onload = adicionarImagens;
+  </script>
+  
 </body>
 
 </html>
