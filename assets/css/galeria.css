@@ -15,7 +15,7 @@ body {
 
 /* Cabeçalho */
 header {
-    background-color: #255cf3;
+    background-color: #2e3a87;
     padding: 10px 0;
 }
 
@@ -123,7 +123,7 @@ p {
 
 /* Rodapé */
 footer {
-    background-color: #2d6a4f;
+    background-color: #2e3a87;
     color: white;
     text-align: center;
     padding: 10px;
