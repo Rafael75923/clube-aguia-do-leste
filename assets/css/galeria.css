@@ -15,7 +15,7 @@ body {
 
 /* Cabeçalho */
 header {
-    background-color: #2d6a4f;
+    background-color: #255cf3;
     padding: 10px 0;
 }
 
@@ -111,14 +111,14 @@ p {
     font-size: 2rem;
     color: white;
     cursor: pointer;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(27, 67, 247, 0.7);
     padding: 10px;
     border-radius: 50%;
     transition: background-color 0.3s;
 }
 
 .fechar:hover {
-    background-color: red;
+    background-color: rgb(7, 6, 6);
 }
 
 /* Rodapé */
@@ -147,3 +147,43 @@ footer p {
 }
 
 
+.galeria {
+    text-align: center;
+  }
+  
+  .grid-galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  .evento img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+  }
+  
+  .evento img:hover {
+    transform: scale(1.1);
+  }
+  
+  .filtros {
+    margin: 1rem 0;
+  }
+  
+  .filtros button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    background-color: rgb(12, 56, 177);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .filtros button:hover {
+    background-color: #004ad4;
+  }
+  
