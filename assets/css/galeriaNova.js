@@ -23,7 +23,7 @@ const albuns = {
     fotosContainer.innerHTML = ""; // limpa fotos anteriores
     const { pasta, prefixo, extensao } = albuns[album];
   
-    for (let i = 1; i <= 474; i++) {
+    for (let i = 1; i <= 100; i++) {
       const img = document.createElement('img');
       img.src = `assets/img/${pasta}/${prefixo} (${i}).${extensao}`;
       img.alt = album;
