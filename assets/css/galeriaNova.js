@@ -3,7 +3,7 @@ const albuns = {
     "Cerimonias": { pasta: "Cerimonias", prefixo: "cer1", extensao: "jpeg" },
     "Instruções": { pasta: "Instrucoes", prefixo: "inst1", extensao: "jpeg" },
     "Acampamentos": { pasta: "Acampamentos", prefixo: "aca1", extensao: "jpg" },
-    "AcampADL2": { pasta: "AcampADL2", prefixo: "adl1", extensao: "jpg" },
+    "AcampADL 2": { pasta: "AcampADL 2", prefixo: "adl1", extensao: "jpg" },
     "Ação Social": { pasta: "AcaoSocial", prefixo: "aca1", extensao: "jpg" },
     "Reuniões Regulares": { pasta: "ReunioesRegulares", prefixo: "Reu1", extensao: "jpg" },
     "Treinamento": { pasta: "Treinamento", prefixo: "tre1", extensao: "jpeg" }
