@@ -1,6 +1,6 @@
 const albuns = {
     "AcampADL": { pasta: "AcampADL", prefixo: "adl1", extensao: "jpg" },
-    "AcampADL 2": { pasta: "AcampADL 2", prefixo: "adl1", extensao: "jpg" },
+    "AcampADl 2": { pasta: "AcampADl 2", prefixo: "adl1", extensao: "jpg" },
     "AcampADL 3": { pasta: "AcampADL 3", prefixo: "adl1", extensao: "jpg" },
     "AcampADL 4": { pasta: "AcampADL 4", prefixo: "adl1", extensao: "jpg" },
     "AcampADL 5": { pasta: "AcampADL 5", prefixo: "adl1", extensao: "jpg" },
