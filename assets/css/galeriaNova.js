@@ -1,10 +1,13 @@
 const albuns = {
     "AcampADL": { pasta: "AcampADL", prefixo: "adl1", extensao: "jpg" },
+    "AcampADL3": { pasta: "AcampADL3", prefixo: "adl1", extensao: "jpg" },
+    "AcampADL 5": { pasta: "AcampADL 5", prefixo: "adl1", extensao: "jpg" },
     "Cerimonias": { pasta: "Cerimonias", prefixo: "cer1", extensao: "jpeg" },
     "Instruções": { pasta: "Instrucoes", prefixo: "inst1", extensao: "jpeg" },
-    "Acampamentos": { pasta: "Acampamentos", prefixo: "aca1", extensao: "jpg" },
     "AcampADL 2": { pasta: "AcampADL 2", prefixo: "adl1", extensao: "jpg" },
+    "Acampamentos": { pasta: "Acampamentos", prefixo: "aca1", extensao: "jpg" },
     "Ação Social": { pasta: "AcaoSocial", prefixo: "aca1", extensao: "jpg" },
+    "AcampADL4": { pasta: "AcampADL4", prefixo: "adl1", extensao: "jpg" },
     "Reuniões Regulares": { pasta: "ReunioesRegulares", prefixo: "Reu1", extensao: "jpg" },
     "Treinamento": { pasta: "Treinamento", prefixo: "tre1", extensao: "jpeg" }
   };
@@ -24,7 +27,7 @@ const albuns = {
     fotosContainer.innerHTML = ""; // limpa fotos anteriores
     const { pasta, prefixo, extensao } = albuns[album];
   
-    for (let i = 1; i <= 100; i++) {
+    for (let i = 1; i <= 474; i++) {
       const img = document.createElement('img');
       img.src = `assets/img/${pasta}/${prefixo} (${i}).${extensao}`;
       img.alt = album;
