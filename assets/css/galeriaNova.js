@@ -1,13 +1,13 @@
 const albuns = {
     "AcampADL": { pasta: "AcampADL", prefixo: "adl1", extensao: "jpg" },
+    "AcampADL 2": { pasta: "AcampADL 2", prefixo: "adl1", extensao: "jpg" },
     "AcampADL 3": { pasta: "AcampADL 3", prefixo: "adl1", extensao: "jpg" },
+    "AcampADL 4": { pasta: "AcampADL 4", prefixo: "adl1", extensao: "jpg" },
     "AcampADL 5": { pasta: "AcampADL 5", prefixo: "adl1", extensao: "jpg" },
     "Cerimonias": { pasta: "Cerimonias", prefixo: "cer1", extensao: "jpeg" },
-    "Instruções": { pasta: "Instrucoes", prefixo: "inst1", extensao: "jpeg" },
-    "AcampADL 2": { pasta: "AcampADL 2", prefixo: "adl1", extensao: "jpg" },
+    "Instruções": { pasta: "Instrucoes", prefixo: "inst1", extensao: "jpeg" },    
     "Acampamentos": { pasta: "Acampamentos", prefixo: "aca1", extensao: "jpg" },
-    "Ação Social": { pasta: "AcaoSocial", prefixo: "aca1", extensao: "jpg" },
-    "AcampADL 4": { pasta: "AcampADL 4", prefixo: "adl1", extensao: "jpg" },
+    "Ação Social": { pasta: "AcaoSocial", prefixo: "aca1", extensao: "jpg" },    
     "Reuniões Regulares": { pasta: "ReunioesRegulares", prefixo: "Reu1", extensao: "jpg" },
     "Treinamento": { pasta: "Treinamento", prefixo: "tre1", extensao: "jpeg" }
   };
