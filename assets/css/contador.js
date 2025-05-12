@@ -1,5 +1,5 @@
 // Defina a data e hora do próximo evento (formato: YYYY-MM-DDTHH:MM:SS)
-const dataEvento = new Date("2025-05-31T08:16:00").getTime();
+const dataEvento = new Date("2025-05-31T16:00:00").getTime();
 
 function atualizarContagem() {
   const agora = new Date().getTime();
