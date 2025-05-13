@@ -29,3 +29,17 @@ function fecharLightbox() {
     console.error("Lightbox ou imagem ampliada não encontrada no DOM.");
   }
 }
+
+//DESAPARECIDO 2 FOTOS
+  document.addEventListener("DOMContentLoaded", function () {
+  const slides = document.querySelectorAll('.slideshow-desaparecido .slide');
+  let current = 0;
+
+  if (slides.length > 1) {
+    setInterval(() => {
+      slides[current].classList.remove('active');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('active');
+    }, 3000);
+  }
+});
