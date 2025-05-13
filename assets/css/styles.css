@@ -413,3 +413,53 @@ img {
     font-size: 0.95rem;
   }
 }
+
+/*Fundo de PLANO*/
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+/* Fundo com slideshow */
+.slideshow-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-size: cover;
+  background-position: center;
+  animation: slideShow 15s infinite;
+}
+
+@keyframes slideShow {
+  0%   { background-image: url('../img/Desaparecido/foto2.jpg'); }
+  33%  { background-image: url('../img/Desaparecido/foto1.jpg'); }
+  66%  { background-image: url('../img/Desaparecido/foto3.jpg'); }
+  100% { background-image: url('../img/Desaparecido/foto4.jpeg'); }
+}
+
+/* Seção principal */
+.desaparecido {
+  position: relative;
+  z-index: 1;
+  padding: 80px 20px;
+  text-align: center;
+  color: #000;
+  background-color: rgba(255, 255, 255, 0.7);
+  max-width: 600px;
+  margin: 100px auto;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+.cartaz img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
