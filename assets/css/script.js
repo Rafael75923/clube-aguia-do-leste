@@ -28,6 +28,9 @@ function fecharLightbox() {
   } else {
     console.error("Lightbox ou imagem ampliada não encontrada no DOM.");
   }
+  function toggleMenu() {
+    document.querySelector('.menu').classList.toggle('active');
+  }
 }
 
 //DESAPARECIDO 2 FOTOS
