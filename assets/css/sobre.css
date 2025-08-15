@@ -1,101 +1,123 @@
-/* Estilo geral da seção "Sobre" */
+/* ==========================
+   Estilo geral da seção "Sobre"
+========================== */
 .sobre {
-    padding: 20px;
-    font-family: Arial, sans-serif;
-    line-height: 1;
-    color: #333;
+    padding: 20px; /* Espaçamento interno da seção */
+    font-family: Arial, sans-serif; /* Fonte padrão */
+    line-height: 1.5; /* Espaçamento entre linhas para melhor leitura */
+    color: #333; /* Cor do texto */
 }
 
+/* Títulos principais */
 .sobre h1, .sobre h2 {
-    text-align: center;
-    color: #860202;
-    margin-bottom: 20px;
+    text-align: center; /* Centraliza os títulos */
+    color: #860202; /* Cor vermelha do clube */
+    margin-bottom: 20px; /* Espaço abaixo do título */
 }
 
-/* Estilo da história */
+/* ==========================
+   História do Clube
+========================== */
 .historia {
-    margin-bottom: 40px;
+    margin-bottom: 40px; /* Espaço abaixo da seção história */
 }
 
 .historia p {
-    text-align: center;
-    margin-bottom: 20px;
+    text-align: center; /* Centraliza os parágrafos */
+    margin-bottom: 20px; /* Espaço entre parágrafos */
 }
 
+/* Galeria de fotos da história */
 .fotos {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
+    display: flex; /* Flexbox para organizar as fotos */
+    justify-content: center; /* Centraliza horizontalmente */
+    gap: 15px; /* Espaço entre as fotos */
+    flex-wrap: wrap; /* Permite quebrar linha se necessário */
 }
 
 .foto-historia {
-    width: 200px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: transform 0.2s;
+    width: 200px; /* Largura fixa das fotos */
+    height: 150px; /* Altura fixa */
+    object-fit: cover; /* Corta a imagem para caber no espaço sem distorção */
+    border-radius: 8px; /* Bordas arredondadas */
+    cursor: pointer; /* Cursor de clique */
+    transition: transform 0.3s, box-shadow 0.3s; /* Animação ao passar o mouse */
 }
 
 .foto-historia:hover {
-    transform: scale(1.1);
+    transform: scale(1.1); /* Aumenta a foto ao passar o mouse */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Sombra suave */
 }
 
-/* Organograma */
+/* ==========================
+   Organograma da Direção
+========================== */
 .organograma {
-    margin-bottom: 40px;
+    margin-bottom: 60px; /* Espaço abaixo da seção */
+    
 }
 
 .organograma .diretores {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
+    display: flex; /* Flexbox para alinhar diretores */
+    justify-content: center; /* Centraliza horizontalmente */
+    gap: 60px; /* Espaço entre os diretores */
+    flex-wrap: wrap; /* Permite quebra de linha */
 }
 
-.organograma .diretor {
-    text-align: center;
-}
+
 
 .organograma img {
-    width: 150px;
+    width: 180px; /* Tamanho da foto do diretor */
     height: 150px;
-    border-radius: 50%;
+    border-radius: 200%; /* Deixa a foto circular */
     object-fit: cover;
     cursor: pointer;
-    transition: transform 0.2s;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .organograma img:hover {
-    transform: scale(1.1);
+    transform: scale(1.1); /* Zoom ao passar o mouse */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Sombra */
 }
 
 .organograma p {
-    margin-top: 10px;
+    margin: 5; /* Remove margens acima e abaixo */
     font-weight: bold;
+    text-align: justify; /* Mantém centralizado */
+    line-height: 1; /* Espaçamento normal entre linhas */
+     max-width: 800px;   /* Opcional: limita a largura do texto */
+    margin: 0 auto 30px auto; /* Centraliza horizontalmente e adiciona margem inferior */
 }
 
-/* Missão */
+
+
+
+/* ==========================
+   Missão do Clube
+========================== */
 .missao {
     margin-bottom: 40px;
-    text-align: justify;
+    text-align: center; /* Texto justificado */
 }
 
 .missao h2 {
     margin-bottom: 15px;
 }
 
-/* Diretores Anteriores */
+/* ==========================
+   Diretores Anteriores
+========================== */
 .diretores-anteriores {
     margin-bottom: 40px;
+    text-align: center; /* Centraliza títulos e lista */
+    
 }
 
 .diretores-lista {
-    display: flex;
+    display: flex; /* Flexbox para alinhar diretores */
     justify-content: center;
     gap: 30px;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Permite quebra de linha */
 }
 
 .diretor-anterior {
@@ -103,35 +125,66 @@
 }
 
 .diretor-anterior img {
-    width: 120px;
+    width: 200px; /* Tamanho da foto dos diretores anteriores */
     height: 120px;
     border-radius: 50%;
     object-fit: cover;
     cursor: pointer;
-    transition: transform 0.2s;
+    transition: transform 0.3s, box-shadow 0.3s; /* Efeito hover */
 }
 
 .diretor-anterior img:hover {
-    transform: scale(1.1);
+    transform: scale(1.1); /* Zoom ao passar o mouse */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 .diretor-anterior p {
     margin-top: 10px;
+    text-align: justify; /* Texto justificado */
     font-weight: bold;
 }
 
-/* Rodapé fixo no fundo da tela */
+/* ==========================
+   Rodapé
+========================== */
 .footer {
-    position: fixed;
+    position: fixed; /* Fixa o rodapé no fundo da página */
     bottom: 0;
     left: 0;
-    width: 100%;
-    height: 40px; /* Altura menor do rodapé */
-    background-color: #2e3a87;
-    color: #ffffff;
+    width: 100%; /* Ocupa toda a largura */
+    height: 40px; /* Altura menor */
+    background-color: #2e3a87; /* Azul escuro do clube */
+    color: #ffffff; /* Texto branco */
     text-align: center;
-    line-height: 8px; /* Alinha o texto verticalmente no centro */
+    line-height: 40px; /* Centraliza verticalmente o texto */
     font-size: 0.85em;
-    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
     z-index: 1000;
+}
+
+/* ==========================
+   Animação Fade-Up para elementos
+========================== */
+.fade-up {
+    opacity: 0; /* Inicialmente invisível */
+    transform: translateY(20px); /* Posicionado 20px abaixo */
+    transition: all 0.8s ease-out; /* Transição suave */
+}
+
+.fade-up.show {
+    opacity: 1; /* Torna visível */
+    transform: translateY(0); /* Move para a posição original */
+}
+
+.diretor-anterior, .diretor-anterior img, .diretor-anterior p {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease-out;
+}
+
+.diretor-anterior.show, 
+.diretor-anterior.show img, 
+.diretor-anterior.show p {
+    opacity: 1;
+    transform: translateY(0);
 }
