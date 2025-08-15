@@ -13,47 +13,6 @@ body {
   color: #333;
 }
 
-/* Cabeçalho */
-header {
-  background-color: #2e3a87;
-  padding: 20px 0;
-  text-align: center;
-}
-
-header .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-header .navbar .logo {
-  max-width: 150px;
-  height: auto;
-}
-
-header .navbar ul {
-  display: flex;
-  list-style-type: none;
-}
-
-header .navbar ul li {
-  margin: 0 15px;
-}
-
-header .navbar ul li a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-header .navbar ul li a:hover {
-  color: #f4a300;
-}
-
 /* Seção de boas-vindas */
 .boas-vindas {
   display: flex;
@@ -193,42 +152,9 @@ footer p {
   font-size: 1rem;
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-  .boas-vindas {
-    flex-direction: column;
-    text-align: center;
-  }
 
-  .boas-vindas-texto {
-    max-width: 100%;
-    margin-bottom: 20px;
-  }
 
-  .boas-vindas-video {
-    max-width: 100%;
-  }
 
-  .anuncios-container {
-    flex-direction: column;
-  }
-}
-
-@media (max-width: 480px) {
-  header .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  header .navbar ul {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .cartaz img {
-    width: 80%;
-  }
-}
 
 /* Estilo para a lightbox */
 .imagem-expandida {
@@ -311,9 +237,9 @@ img {
   margin: 0 10px;
   background: #c00;
   color: #fff;
-  padding: 10px;
+  padding: 5px;
   border-radius: 8px;
-  min-width: 60px;
+  min-width: 70px;
 }
 
 /*PALAVRA DO DIA */
@@ -396,23 +322,7 @@ img {
   margin: 6px 0;
 }
 
-@media (max-width: 768px) {
-  .mural {
-    padding: 40px 15px;
-  }
 
-  .mural h2 {
-    font-size: 1.8rem;
-  }
-
-  .avisos-lista h3 {
-    font-size: 1.3rem;
-  }
-
-  .avisos-lista p {
-    font-size: 0.95rem;
-  }
-}
 
 /*Fundo de PLANO*/
 
@@ -492,3 +402,129 @@ body, html {
   opacity: 1;
   z-index: 1;
 }
+
+/* ======= RESET ======= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    line-height: 1.5;
+}
+
+/* ======= NAVBAR ======= */
+.navbar {
+    background: #2e3a87; /* fundo azul */
+    padding: 10px 15px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.navbar img {
+    height: 60px;
+    width: auto;
+}
+
+.navbar ul {
+    display: flex;
+    flex-direction: row; /* sempre lado a lado */
+    justify-content: center; /* centraliza os itens */
+    align-items: center;
+    flex-wrap: wrap; /* quebra linha se não couber */
+    list-style: none;
+    gap: 20px;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+    color: #ffcc00; /* cor no hover */
+}
+
+/* ======= SEÇÃO BOAS-VINDAS ======= */
+.boas-vindas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+}
+
+.boas-vindas-texto {
+    max-width: 50%;
+}
+
+.boas-vindas-video {
+    max-width: 45%;
+}
+
+.boas-vindas-video video {
+    width: 50%;
+    height: auto;
+}
+
+/* ======= ANÚNCIOS ======= */
+.anuncios-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.anuncio {
+    background: #f4f4f4;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 250px;
+}
+
+/* ======= RODAPÉ ======= */
+footer {
+    background: #2e3a87;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+/* ======= ELEMENTOS GERAIS ======= */
+img, video {
+    max-width: 40%;
+    height: auto;
+    display: block;
+}
+
+/* ======= RESPONSIVIDADE ======= */
+@media (max-width: 1020px) {
+    .boas-vindas-texto,
+    .boas-vindas-video {
+        max-width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar img {
+        height: 100px;
+    }
+    .navbar ul {
+        gap: 10px; /* menos espaço no celular */
+    }
+    .navbar ul li a {
+        font-size: 0.9rem;
+    }
+}
+
