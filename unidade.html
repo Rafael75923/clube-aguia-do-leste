@@ -5,1106 +5,167 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cantinho da Unidade - Clube de Desbravadores</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/Unidade.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <script src="assets/js/formulario.js" defer></script>
     <script src="assets/js/lightbox.js" defer></script>
     <script src="assets/js/scripts.js" defer></script>
 </head>
-<header>
-    <nav class="navbar">
-        <img src="assets/img/logo.png" alt="Logo Águia do Leste" class="logo">
-        <ul class="menu">
-            <li><a href="index.html">Início</a></li>
-            <li><a href="sobre.html">Sobre</a></li>
-        <!-- <li><a href="loja.html">Loja</a></li> -->
-            <li><a href="galeria.html">Galeria</a></li>
-            <li><a href="unidade.html">Unidade</a></li>
-            <li><a href="contatos.html">Contatos</a></li>
-            <button id="logoutButton">Sair</button>
-        </ul>
-    </nav>
-    <h1>Cantinho da Unidade - Clube de Desbravadores</h1>
-</header>
-<script>
-    // Verificar se o usuário está logado
-    const estaAutenticado = sessionStorage.getItem('estaAutenticado');
 
-    // Redirecionar para login se não estiver autenticado
-    if (!sessionStorage.getItem("estaAutenticado")) {
-        window.location.href = "login.html";
-    }
-</script>
-<script>
-    document.getElementById("logoutButton").addEventListener("click", function () {
-        sessionStorage.removeItem("estaAutenticado"); // Remove a autenticação
-        window.location.href = "login.html"; // Redireciona para a página de login
-    });
-</script>
-<section>
-    <h2>Informações da Unidade</h2>
-    <div class="unit-logo">
-        <h3>Águia da Esperança</h3>
-        <img src="assets/img/unidade1.jpg" alt="Logo da Unidade" onclick="abrirLightbox(this)">
-    </div>
+<body class="bg-gray-50 font-sans">
 
-    <div class="unit-info">
-        <h3>Preenchimento de Dados</h3>
-        <div class="form-top-info">
-            <label for="dataEnvio">Data de envio:</label>
-            <input type="text" class="dataEnvio" name="dataEnvio" readonly>
+    <!-- Header -->
+    <header class="bg-red-700 text-white">
+        <div class="max-w-6xl mx-auto flex items-center justify-between p-4">
+            <img src="assets/img/logo.png" alt="Logo Águia do Leste" class="h-12">
+            <nav>
+                <div class="hidden md:flex space-x-6 items-center">
+                    <a href="index.html" class="hover:underline">Início</a>
+                    <a href="sobre.html" class="hover:underline">Sobre</a>
+                    <a href="galeria.html" class="hover:underline">Galeria</a>
+                    <a href="unidade.html" class="underline font-bold">Unidade</a>
+                    <a href="contatos.html" class="hover:underline">Contatos</a>
+                    <button id="logoutButton" class="bg-white text-red-700 px-3 py-1 rounded hover:bg-gray-200">Sair</button>
+                </div>
+                <!-- Hamburger menu -->
+                <div class="md:hidden">
+                    <button id="menuButton" class="focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </nav>
         </div>
-    
-        <div class="form-scroll">
-            <form id="formularioAguiaDaEsperanca" onsubmit="return false;">
-                <table class="form-table" id="tabela-dados">
-                    <tr>
-                        <th>Desbravador</th>
-                        <th>Presença</th>
-                        <th>Pontualidade</th>
-                        <th>Uniforme</th>
-                        <th>Bíblia</th>
-                        <th>Pequeno Grupo</th>
-                        <th>Classe Bíblica</th>
-                        <th>Mensalidade</th>
-                        <th>Livro do ano</th>
-                        <th>Disciplina</th>
-                        <th>Pontuação</th>
-                    </tr>
-                    <tr>
-                        <input type="text" id="preenchidoPor" name="preenchidoPor" placeholder="Seu nome aqui 😊"
-                            required>
-                        <input type="hidden" id="Data Emissão" name="Data Emissão">
-                        <td><input type="text" name="Desbravador" placeholder="Nome do Desbravador"></td>
-                        <td>
-                            <input type="radio" name="Presença" value="10" onchange="calcularPontuacao()"> Sim
-                            <input type="radio" name="Presença" value="0" onchange="calcularPontuacao()"> Não
-                        </td>
-                        <td>
-                            <input type="radio" name="Pontualidade" value="10" onchange="calcularPontuacao()"> Sim
-                            <input type="radio" name="Pontualidade" value="5" onchange="calcularPontuacao()"> Chegou
-                            Atrasado
-                            <input type="radio" name="Pontualidade" value="0" onchange="calcularPontuacao()"> Não
-                        </td>
-                        <td>
-                            <input type="radio" name="Uniforme" value="10" onchange="calcularPontuacao()"> Sim
-                            <input type="radio" name="Uniforme" value="5" onchange="calcularPontuacao()"> Incompleto
-                            <input type="radio" name="Uniforme" value="0" onchange="calcularPontuacao()"> Não
-                        </td>
-                        <td>
-                            <input type="radio" name="Bíblia" value="10" onchange="calcularPontuacao()"> Sim
-                            <input type="radio" name="Bíblia" value="0" onchange="calcularPontuacao()"> Não
-                        </td>
-                        <td>
-                            <input type="radio" name="Pequeno Grupo" value="10" onchange="calcularPontuacao()"> Sim
-                            <input type="radio" name="Pequeno Grupo" value="0" onchange="calcularPontuacao()"> Não
-                        </td>
-                        <td>
-                            <input type="radio" name="Classe Bíblica" value="10" onchange="calcularPontuacao()"> Sim
-                            <input type="radio" name="Classe Bíblica" value="0" onchange="calcularPontuacao()"> Não
-                        </td>
-                        <td>
-                            <input type="radio" name="Mensalidade" value="10" onchange="calcularPontuacao()"> Sim
-                            <input type="radio" name="Mensalidade" value="0" onchange="calcularPontuacao()"> Não
-                        </td>
-                        <td>
-                            <input type="radio" name="Livro do ano" value="10" onchange="calcularPontuacao()"> Sim
-                            <input type="radio" name="Livro do ano" value="0" onchange="calcularPontuacao()"> Não
-                        </td>
-                        <td>
-                            <input type="radio" name="Disciplina" value="10" onchange="calcularPontuacao()"> Sim
-                            <input type="radio" name="Disciplina" value="0" onchange="calcularPontuacao()"> Não
-                        </td>
-                        <td><input type="text" name="Pontuação" readonly></td>
-                    </tr>
-                </table>
-                <button onclick="enviarFormulario()">Enviar Dados</button>
-            </form>
+        <!-- Mobile menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-red-600 px-4 pb-4 space-y-2">
+            <a href="index.html" class="block">Início</a>
+            <a href="sobre.html" class="block">Sobre</a>
+            <a href="galeria.html" class="block">Galeria</a>
+            <a href="unidade.html" class="block font-bold">Unidade</a>
+            <a href="contatos.html" class="block">Contatos</a>
+            <button id="logoutButtonMobile" class="w-full bg-white text-red-700 px-3 py-1 rounded mt-2">Sair</button>
         </div>
-    </div>
+        <h1 class="text-center text-2xl font-bold p-4">Cantinho da Unidade - Clube de Desbravadores</h1>
+    </header>
 
-    <div class="desbravador-photos">
-        <h3 style="text-align: center;">Fotos dos Desbravadores</h3>
-        <div class="photo-grid">
-            <div class="photo-item">
-                <img src="assets/img/Aguia da esperança/Angelina Sodré.jpg" alt="Desbravador 1"
-                    onclick="abrirLightbox(this)">
-                <p>Nome: Angelina Sodré</p>
-                <p>Idade: 12</p>
-                <p>Função: Desbravadora</p>
-            </div>
-            <div class="photo-item">
-                <img src="assets/img/Aguia da esperança/Gabrielly  Lemos.jpeg" alt="Desbravador 2"
-                    onclick="abrirLightbox(this)">
-                <p>Nome: Gabrielly Lemos</p>
-                <p>Idade: 14</p>
-                <p>Função: Desbravadora</p>
-            </div>
-            <div class="photo-item">
-                <img src="assets/img/Aguia da esperança/Maria Beatriz.jpg" alt="Desbravador 2"
-                    onclick="abrirLightbox(this)">
-                <p>Nome: Maria Beatriz</p>
-                <p>Idade: 11</p>
-                <p>Função: Desbravadora</p>
-            </div>
-            <div class="photo-item">
-                <img src="assets/img/Aguia da esperança/Adryelle Moura.jpg" alt="Desbravador 2"
-                    onclick="abrirLightbox(this)">
-                <p>Nome: Adryelle Moura</p>
-                <p>Idade: 10</p>
-                <p>Função: Desbravadora</p>
-            </div>
-            <div class="photo-item">
-                <img src="assets/img/Aguia da esperança/Emilly Roberta.png" alt="Desbravador 2"
-                    onclick="abrirLightbox(this)">
-                <p>Nome: Emilly Roberta</p>
-                <p>Idade: 13</p>
-                <p>Função: Desbravadora</p>
-            </div>
-            <div class="photo-item">
-                <img src="assets/img/Aguia da esperança/Larissa Almeida.jpg" alt="Desbravador 2"
-                    onclick="abrirLightbox(this)">
-                <p>Nome: Larissa Almeida</p>
-                <p>Idade: 13</p>
-                <p>Função: Desbravadora</p>
-            </div>
-            <div class="photo-item">
-                <img src="assets/img/Aguia da esperança/Emanuele Carvalho.jpeg" alt="Desbravador 2"
-                    onclick="abrirLightbox(this)">
-                <p>Nome: Emanuele Carvalho</p>
-                <p>Idade: 16</p>
-                <p>Função: Instrutora</p>
-            </div>
-            <div class="photo-item">
-                <img src="assets/img/Aguia da esperança/Isabelle Carvalho.jpeg" alt="Desbravador 2"
-                    onclick="abrirLightbox(this)">
-                <p>Nome: Isabelle Carvalho</p>
-                <p>Idade: 18</p>
-                <p>Função: Conselheira</p>
-            </div>
-            <!-- Adicione mais fotos aqui -->
-        </div>
-    </div>
-</section>
-
-
-<!-- Aqui inicia uma unidade -->
-<section>
-    <h2>Informações da Unidade</h2>
-    <div class="unit-logo">
-        <h3>Águia de Ouro</h3>
-        <img src="assets/img/unidade2.jpg" alt="Logo da Unidade" onclick="abrirLightbox(this)">
-    </div>
-
-    <div class="form-top-info">
-        <label for="dataEnvio">Data de envio:</label>
-        <input type="text" class="dataEnvio" name="dataEnvio" readonly>
-    </div>
-
-    <div class="form-scroll">
-        <form id="formularioAguiaDeOuro" onsubmit="return false;">
-            <table class="form-table" id="tabela-dados">
-                <tr>
-                    <th>Desbravador</th>
-                    <th>Presença</th>
-                    <th>Pontualidade</th>
-                    <th>Uniforme</th>
-                    <th>Bíblia</th>
-                    <th>Pequeno Grupo</th>
-                    <th>Classe Bíblica</th>
-                    <th>Mensalidade</th>
-                    <th>Livro do ano</th>
-                    <th>Disciplina</th>
-                    <th>Pontuação</th>
-                </tr>
-                <tr>
-                    <input type="text" id="preenchidoPor" name="preenchidoPor" placeholder="Seu nome aqui 😊" required>
-                    <input type="hidden" id="Data Emissão" name="Data Emissão">
-                    <td><input type="text" name="Desbravador" placeholder="Nome do Desbravador"></td>
-                    <td>
-                        <input type="radio" name="Presença" value="10" onchange="calcularPontuacao()"> Sim
-                        <input type="radio" name="Presença" value="0" onchange="calcularPontuacao()"> Não
-                    </td>
-                    <td>
-                        <input type="radio" name="Pontualidade" value="10" onchange="calcularPontuacao()"> Sim
-                        <input type="radio" name="Pontualidade" value="5" onchange="calcularPontuacao()"> Chegou
-                        Atrasado
-                        <input type="radio" name="Pontualidade" value="0" onchange="calcularPontuacao()"> Não
-                    </td>
-                    <td>
-                        <input type="radio" name="Uniforme" value="10" onchange="calcularPontuacao()"> Sim
-                        <input type="radio" name="Uniforme" value="5" onchange="calcularPontuacao()"> Incompleto
-                        <input type="radio" name="Uniforme" value="0" onchange="calcularPontuacao()"> Não
-                    </td>
-                    <td>
-                        <input type="radio" name="Bíblia" value="10" onchange="calcularPontuacao()"> Sim
-                        <input type="radio" name="Bíblia" value="0" onchange="calcularPontuacao()"> Não
-                    </td>
-                    <td>
-                        <input type="radio" name="Pequeno Grupo" value="10" onchange="calcularPontuacao()"> Sim
-                        <input type="radio" name="Pequeno Grupo" value="0" onchange="calcularPontuacao()"> Não
-                    </td>
-                    <td>
-                        <input type="radio" name="Classe Bíblica" value="10" onchange="calcularPontuacao()"> Sim
-                        <input type="radio" name="Classe Bíblica" value="0" onchange="calcularPontuacao()"> Não
-                    </td>
-                    <td>
-                        <input type="radio" name="Mensalidade" value="10" onchange="calcularPontuacao()"> Sim
-                        <input type="radio" name="Mensalidade" value="0" onchange="calcularPontuacao()"> Não
-                    </td>
-                    <td>
-                        <input type="radio" name="Livro do ano" value="10" onchange="calcularPontuacao()"> Sim
-                        <input type="radio" name="Livro do ano" value="0" onchange="calcularPontuacao()"> Não
-                    </td>
-                    <td>
-                        <input type="radio" name="Disciplina" value="10" onchange="calcularPontuacao()"> Sim
-                        <input type="radio" name="Disciplina" value="0" onchange="calcularPontuacao()"> Não
-                    </td>
-                    <td><input type="text" name="Pontuação" readonly></td>
-                </tr>
-            </table>
-            <button onclick="enviarFormulario()">Enviar Dados</button>
-        </form>
-    </div>
-    </div>
-
-    <div class="desbravador-photos">
-        <h3 style="text-align: center;">Fotos dos Desbravadores</h3>
-        <div class="photo-grid">
-            <div class="photo-item">
-                <img src="assets/img/Aguia de Ouro/Alice Texeira.jpg" alt="Desbravador 1" onclick="abrirLightbox(this)">
-                <p>Nome: Alice Texeira</p>
-                <p>Idade: 13</p>
-                <p>Função: Desbravadora</p>
-            </div>
-            <div class="photo-item">
-                <img src="assets/img/Aguia de Ouro/Aline Silva.jpeg" alt="Desbravador 2" onclick="abrirLightbox(this)">
-                <p>Nome: Aline Silva</p>
-                <p>Idade: 15</p>
-                <p>Função: Desbravadora</p>
-            </div>
-            <div class="photo-item">
-                <img src="assets/img/Aguia de Ouro/Sophia Lira.png" alt="Desbravador 3" onclick="abrirLightbox(this)">
-                <p>Nome: Sophia Lira</p>
-                <p>Idade: 11</p>
-                <p>Função: Desbravadora</p>
-            </div>
-            <div class="photo-item">
-                <img src="assets/img/Aguia de Ouro/Nicolly Kamilly.jpg" alt="Desbravador 4"
-                    onclick="abrirLightbox(this)">
-                <p>Nome: Nicolly Kamilly</p>
-                <p>Idade: 14</p>
-                <p>Função: Desbravadora</p>
-            </div>
-            <div class="photo-item">
-                <img src="assets/img/Aguia de Ouro/Kaylane Lima.png" alt="Desbravador 5" onclick="abrirLightbox(this)">
-                <p>Nome: Kaylane Lima</p>
-                <p>Idade: 12</p>
-                <p>Função: Desbravadora</p>
-            </div>
-            <div class="photo-item">
-                <img src="assets/img/Aguia de Ouro/Bianca Carneiro.jpg" alt="Desbravador 6"
-                    onclick="abrirLightbox(this)">
-                <p>Nome: Bianca Carneiro</p>
-                <p>Idade: 11</p>
-                <p>Função: Desbravadora</p>
-            </div>
-            <div class="photo-item">
-                <img src="assets/img/Aguia de Ouro/Marcela Torres.png" alt="Desbravador 7"
-                    onclick="abrirLightbox(this)">
-                <p>Nome: Marcela Torres</p>
-                <p>Idade: 24</p>
-                <p>Função: Instrutora</p>
-            </div>
-            <div class="photo-item">
-                <img src="assets/img/Aguia de Ouro/Hana Castanharo.jpg" alt="Desbravador 8"
-                    onclick="abrirLightbox(this)">
-                <p>Nome: Hana Castanharo</p>
-                <p>Idade: 20</p>
-                <p>Função: Instrutora</p>
-            </div>
-            <div class="photo-item">
-                <img src="assets/img/Aguia de Ouro/Jullie Pantoja.png" alt="Desbravador 9"
-                    onclick="abrirLightbox(this)">
-                <p>Nome: Jullie Pantoja</p>
-                <p>Idade: 19</p>
-                <p>Função: Conselheira</p>
-            </div>
-            <!-- Adicione mais fotos aqui -->
-        </div>
-    </div>
-</section>
-<!-- aqui finaliza uma unidade -->
-
-<!-- Aqui inicia uma unidade -->
-<section>
-    <h2>Informações da Unidade</h2>
-    <div class="unit-logo">
-        <h3>Águia da Fé</h3>
-        <img src="assets/img/unidade3.png" alt="Logo da Unidade" onclick="abrirLightbox(this)">
-    </div>
-
-    <div class="unit-info">
-        <h3>Preenchimento de Dados</h3>
-        <div class="form-top-info">
-            <label for="dataEnvio">Data de envio:</label>
-            <input type="text" class="dataEnvio" name="dataEnvio" readonly>
-        </div>
-    
-        <div class="form-scroll">
-            <form id="formularioAguiaDeFe" onsubmit="return false;">
-                <table class="form-table" id="tabela-dados">
-                    <tr>
-                        <th>Desbravador</th>
-                        <th>Presença</th>
-                        <th>Pontualidade</th>
-                        <th>Uniforme</th>
-                        <th>Bíblia</th>
-                        <th>Pequeno Grupo</th>
-                        <th>Classe Bíblica</th>
-                        <th>Mensalidade</th>
-                        <th>Livro do ano</th>
-                        <th>Disciplina</th>
-                        <th>Pontuação</th>
-                    </tr>
-                    <tr>
-                        <input type="text" id="preenchidoPor" name="preenchidoPor" placeholder="Seu nome aqui 😊"
-                            required>
-                        <input type="hidden" id="Data Emissão" name="Data Emissão">
-                        <td><input type="text" name="Desbravador" placeholder="Nome do Desbravador"></td>
-                        <td>
-                            <input type="radio" name="Presença" value="10" onchange="calcularPontuacao()"> Sim
-                            <input type="radio" name="Presença" value="0" onchange="calcularPontuacao()"> Não
-                        </td>
-                        <td>
-                            <input type="radio" name="Pontualidade" value="10" onchange="calcularPontuacao()"> Sim
-                            <input type="radio" name="Pontualidade" value="5" onchange="calcularPontuacao()"> Chegou
-                            Atrasado
-                            <input type="radio" name="Pontualidade" value="0" onchange="calcularPontuacao()"> Não
-                        </td>
-                        <td>
-                            <input type="radio" name="Uniforme" value="10" onchange="calcularPontuacao()"> Sim
-                            <input type="radio" name="Uniforme" value="5" onchange="calcularPontuacao()"> Incompleto
-                            <input type="radio" name="Uniforme" value="0" onchange="calcularPontuacao()"> Não
-                        </td>
-                        <td>
-                            <input type="radio" name="Bíblia" value="10" onchange="calcularPontuacao()"> Sim
-                            <input type="radio" name="Bíblia" value="0" onchange="calcularPontuacao()"> Não
-                        </td>
-                        <td>
-                            <input type="radio" name="Pequeno Grupo" value="10" onchange="calcularPontuacao()"> Sim
-                            <input type="radio" name="Pequeno Grupo" value="0" onchange="calcularPontuacao()"> Não
-                        </td>
-                        <td>
-                            <input type="radio" name="Classe Bíblica" value="10" onchange="calcularPontuacao()"> Sim
-                            <input type="radio" name="Classe Bíblica" value="0" onchange="calcularPontuacao()"> Não
-                        </td>
-                        <td>
-                            <input type="radio" name="Mensalidade" value="10" onchange="calcularPontuacao()"> Sim
-                            <input type="radio" name="Mensalidade" value="0" onchange="calcularPontuacao()"> Não
-                        </td>
-                        <td>
-                            <input type="radio" name="Livro do ano" value="10" onchange="calcularPontuacao()"> Sim
-                            <input type="radio" name="Livro do ano" value="0" onchange="calcularPontuacao()"> Não
-                        </td>
-                        <td>
-                            <input type="radio" name="Disciplina" value="10" onchange="calcularPontuacao()"> Sim
-                            <input type="radio" name="Disciplina" value="0" onchange="calcularPontuacao()"> Não
-                        </td>
-                        <td><input type="text" name="Pontuação" readonly></td>
-                    </tr>
-                </table>
-                <button onclick="enviarFormulario()">Enviar Dados</button>
-            </form>
-        </div>
-    </div>
-
-    <div class="desbravador-photos">
-        <h3 style="text-align: center;">Fotos dos Desbravadores</h3>
-        <div class="photo-grid">
-            <div class="photo-item">
-                <img src="assets/img/Aguia da Fé/Beatriz Carneiro.jpg" alt="Desbravador 1"
-                    onclick="abrirLightbox(this)">
-                <p>Nome: Beatriz Carneiro</p>
-                <p>Idade: 11</p>
-                <p>Função: Desbravadora</p>
-            </div>
-            <div class="photo-item">
-                <img src="assets/img/Aguia da Fé/Esther Flores.png" alt="Desbravador 2" onclick="abrirLightbox(this)">
-                <p>Nome: Esther Flores</p>
-                <p>Idade: 10</p>
-                <p>Função: Desbravadora</p>
-            </div>
-            <div class="photo-item">
-                <img src="assets/img/Aguia da Fé/Ághata Ponte.jpg" alt="Desbravador 3" onclick="abrirLightbox(this)">
-                <p>Nome: Ághata Ponte</p>
-                <p>Idade: 13</p>
-                <p>Função: Desbravadora</p>
-            </div>
-            <div class="photo-item">
-                <img src="assets/img/Aguia da Fé/Gabriely Oliveira.jpg" alt="Desbravador 4"
-                    onclick="abrirLightbox(this)">
-                <p>Nome: Gabriely Oliveira</p>
-                <p>Idade: 15</p>
-                <p>Função: Desbravadora</p>
-            </div>
-            <div class="photo-item">
-                <img src="assets/img/Aguia da Fé/Melody Souza.jpg" alt="Desbravador 5" onclick="abrirLightbox(this)">
-                <p>Nome: Melody Souza</p>
-                <p>Idade: 13</p>
-                <p>Função: Desbravadora</p>
-            </div>
-            <div class="photo-item">
-                <img src="assets/img/Aguia da Fé/Isabele Cipriano.png" alt="Desbravador 6"
-                    onclick="abrirLightbox(this)">
-                <p>Nome: Isabele Cipriano</p>
-                <p>Idade: 20</p>
-                <p>Função: Instrutora</p>
-            </div>
-            <div class="photo-item">
-                <img src="assets/img/Aguia da Fé/Ingrid Carvalho.jpeg" alt="Desbravador 7"
-                    onclick="abrirLightbox(this)">
-                <p>Nome: Ingrid Carvalho</p>
-                <p>Idade: 19</p>
-                <p>Função: Conselheira</p>
-            </div>
-            <!-- Adicione mais fotos aqui -->
-        </div>
-    </div>
-</section>
-<!-- aqui finaliza uma unidade -->
-
-<!-- Aqui inicia uma unidade -->
-<section>
-    <h2>Informações da Unidade</h2>
-    <div class="unit-logo">
-        <h3>Falcões Dourado</h3>
-        <img src="assets/img/unidade4.jpg" alt="Logo da Unidade" onclick="abrirLightbox(this)">
-    </div>
-    <div class="unit-info">
-        <h3>Preenchimento de Dados</h3>
-        <div class="form-top-info">
-            <label for="dataEnvio">Data de envio:</label>
-            <input type="text" class="dataEnvio" name="dataEnvio" readonly>
-        </div>
-    
-        <div class="form-scroll">
-            <form id="formularioFalcoesDourado" onsubmit="return false;">
-                <table class="form-table" id="tabela-dados">
-                    <tr>
-                        <th>Desbravador</th>
-                        <th>Presença</th>
-                        <th>Pontualidade</th>
-                        <th>Uniforme</th>
-                        <th>Bíblia</th>
-                        <th>Pequeno Grupo</th>
-                        <th>Classe Bíblica</th>
-                        <th>Mensalidade</th>
-                        <th>Livro do ano</th>
-                        <th>Disciplina</th>
-                        <th>Pontuação</th>
-                    </tr>
-                    <tr>
-                        <input type="text" id="preenchidoPor" name="preenchidoPor" placeholder="Seu nome aqui 😊"
-                            required>
-                        <input type="hidden" id="Data Emissão" name="Data Emissão">
-                        <td><input type="text" name="Desbravador" placeholder="Nome do Desbravador"></td>
-                        <td>
-                            <input type="radio" name="Presença" value="10" onchange="calcularPontuacao()"> Sim
-                            <input type="radio" name="Presença" value="0" onchange="calcularPontuacao()"> Não
-                        </td>
-                        <td>
-                            <input type="radio" name="Pontualidade" value="10" onchange="calcularPontuacao()"> Sim
-                            <input type="radio" name="Pontualidade" value="5" onchange="calcularPontuacao()"> Chegou
-                            Atrasado
-                            <input type="radio" name="Pontualidade" value="0" onchange="calcularPontuacao()"> Não
-                        </td>
-                        <td>
-                            <input type="radio" name="Uniforme" value="10" onchange="calcularPontuacao()"> Sim
-                            <input type="radio" name="Uniforme" value="5" onchange="calcularPontuacao()"> Incompleto
-                            <input type="radio" name="Uniforme" value="0" onchange="calcularPontuacao()"> Não
-                        </td>
-                        <td>
-                            <input type="radio" name="Bíblia" value="10" onchange="calcularPontuacao()"> Sim
-                            <input type="radio" name="Bíblia" value="0" onchange="calcularPontuacao()"> Não
-                        </td>
-                        <td>
-                            <input type="radio" name="Pequeno Grupo" value="10" onchange="calcularPontuacao()"> Sim
-                            <input type="radio" name="Pequeno Grupo" value="0" onchange="calcularPontuacao()"> Não
-                        </td>
-                        <td>
-                            <input type="radio" name="Classe Bíblica" value="10" onchange="calcularPontuacao()"> Sim
-                            <input type="radio" name="Classe Bíblica" value="0" onchange="calcularPontuacao()"> Não
-                        </td>
-                        <td>
-                            <input type="radio" name="Mensalidade" value="10" onchange="calcularPontuacao()"> Sim
-                            <input type="radio" name="Mensalidade" value="0" onchange="calcularPontuacao()"> Não
-                        </td>
-                        <td>
-                            <input type="radio" name="Livro do ano" value="10" onchange="calcularPontuacao()"> Sim
-                            <input type="radio" name="Livro do ano" value="0" onchange="calcularPontuacao()"> Não
-                        </td>
-                        <td>
-                            <input type="radio" name="Disciplina" value="10" onchange="calcularPontuacao()"> Sim
-                            <input type="radio" name="Disciplina" value="0" onchange="calcularPontuacao()"> Não
-                        </td>
-                        <td><input type="text" name="Pontuação" readonly></td>
-                    </tr>
-                </table>
-                <button onclick="enviarFormulario()">Enviar Dados</button>
-            </form>
-        </div>
-    </div>
-
-    <div class="desbravador-photos">
-        <h3 style="text-align: center;">Fotos dos Desbravadores</h3>
-        <div class="photo-grid">
-            <div class="photo-item">
-                <img src="assets/img/Falcão Dourado/Murilo .jpg" alt="Desbravador 1" onclick="abrirLightbox(this)">
-                <p>Nome: Murilo </p>
-                <p>Idade: 12</p>
-                <p>Função: Desbravador</p>
-            </div>
-            <div class="photo-item">
-                <img src="assets/img/Falcão Dourado/Lyedson Oliveira.jpeg" alt="Desbravador 2"
-                    onclick="abrirLightbox(this)">
-                <p>Nome: Lyedson Oliveira</p>
-                <p>Idade: 13</p>
-                <p>Função: Desbravador</p>
-            </div>
-            <div class="photo-item">
-                <img src="assets/img/Falcão Dourado/Jhontan Vinicius.jpg" alt="Desbravador 3"
-                    onclick="abrirLightbox(this)">
-                <p>Nome: Jhontan Vinicius</p>
-                <p>Idade: 11</p>
-                <p>Função: Desbravador</p>
-            </div>
-            <div class="photo-item">
-                <img src="assets/img/Falcão Dourado/Wenderson Gabriel.jpg" alt="Desbravador 4"
-                    onclick="abrirLightbox(this)">
-                <p>Nome: Wenderson Gabriel</p>
-                <p>Idade: 21</p>
-                <p>Função: Instrutor</p>
-            </div>
-            <div class="photo-item">
-                <img src="assets/img/Falcão Dourado/Ricardo Ryan.jpg" alt="Desbravador 5" onclick="abrirLightbox(this)">
-                <p>Nome: Ricardo Ryan</p>
-                <p>Idade: 18</p>
-                <p>Função: Instrutor</p>
-            </div>
-            <div class="photo-item">
-                <img src="assets/img/Falcão Dourado/Eduardo Jesus.jpg" alt="Desbravador 6"
-                    onclick="abrirLightbox(this)">
-                <p>Nome: Eduardo Jesus</p>
-                <p>Idade: 20</p>
-                <p>Função: Instrutor</p>
-            </div>
-            <div class="photo-item">
-                <img src="assets/img/Falcão Dourado/Alisson.jpg" alt="Desbravador 7" onclick="abrirLightbox(this)">
-                <p>Nome: Alisson </p>
-                <p>Idade: 20</p>
-                <p>Função: Instrutor</p>
-            </div>
-            <div class="photo-item">
-                <img src="assets/img/Falcão Dourado/Josué Gomes.jpg" alt="Desbravador 8" onclick="abrirLightbox(this)">
-                <p>Nome: Josué Gomes</p>
-                <p>Idade: 20</p>
-                <p>Função: Conselheiro</p>
-            </div>
-            <!-- Adicione mais fotos aqui -->
-        </div>
-    </div>
-</section>
-<!-- aqui finaliza uma unidade -->
-
-<!-- Aqui inicia uma unidade -->
-<section>
-    <h2>Informações da Unidade</h2>
-    <div class="unit-logo">
-        <h3>Falcões Reais</h3>
-        <img src="assets/img/unidade5.jpg" alt="Logo da Unidade" onclick="abrirLightbox(this)">
-    </div>
-    <div class="unit-info">
-        <h3>Preenchimento de Dados</h3>
-        <div class="form-top-info">
-            <label for="dataEnvio">Data de envio:</label>
-            <input type="text" class="dataEnvio" name="dataEnvio" readonly>
-        </div>
-    
-        <div class="form-scroll">
-            <form id="formularioFalcoesReais" onsubmit="return false;">
-                <table class="form-table" id="tabela-dados">
-                    <tr>
-                        <th>Desbravador</th>
-                        <th>Presença</th>
-                        <th>Pontualidade</th>
-                        <th>Uniforme</th>
-                        <th>Bíblia</th>
-                        <th>Pequeno Grupo</th>
-                        <th>Classe Bíblica</th>
-                        <th>Mensalidade</th>
-                        <th>Livro do ano</th>
-                        <th>Disciplina</th>
-                        <th>Pontuação</th>
-                    </tr>
-                    <tr>
-                        <input type="text" id="preenchidoPor" name="preenchidoPor" placeholder="Seu nome aqui 😊"
-                            required>
-                        <input type="hidden" id="Data Emissão" name="Data Emissão">
-                        <td><input type="text" name="Desbravador" placeholder="Nome do Desbravador"></td>
-                        <td>
-                            <input type="radio" name="Presença" value="10" onchange="calcularPontuacao()"> Sim
-                            <input type="radio" name="Presença" value="0" onchange="calcularPontuacao()"> Não
-                        </td>
-                        <td>
-                            <input type="radio" name="Pontualidade" value="10" onchange="calcularPontuacao()"> Sim
-                            <input type="radio" name="Pontualidade" value="5" onchange="calcularPontuacao()"> Chegou
-                            Atrasado
-                            <input type="radio" name="Pontualidade" value="0" onchange="calcularPontuacao()"> Não
-                        </td>
-                        <td>
-                            <input type="radio" name="Uniforme" value="10" onchange="calcularPontuacao()"> Sim
-                            <input type="radio" name="Uniforme" value="5" onchange="calcularPontuacao()"> Incompleto
-                            <input type="radio" name="Uniforme" value="0" onchange="calcularPontuacao()"> Não
-                        </td>
-                        <td>
-                            <input type="radio" name="Bíblia" value="10" onchange="calcularPontuacao()"> Sim
-                            <input type="radio" name="Bíblia" value="0" onchange="calcularPontuacao()"> Não
-                        </td>
-                        <td>
-                            <input type="radio" name="Pequeno Grupo" value="10" onchange="calcularPontuacao()"> Sim
-                            <input type="radio" name="Pequeno Grupo" value="0" onchange="calcularPontuacao()"> Não
-                        </td>
-                        <td>
-                            <input type="radio" name="Classe Bíblica" value="10" onchange="calcularPontuacao()"> Sim
-                            <input type="radio" name="Classe Bíblica" value="0" onchange="calcularPontuacao()"> Não
-                        </td>
-                        <td>
-                            <input type="radio" name="Mensalidade" value="10" onchange="calcularPontuacao()"> Sim
-                            <input type="radio" name="Mensalidade" value="0" onchange="calcularPontuacao()"> Não
-                        </td>
-                        <td>
-                            <input type="radio" name="Livro do ano" value="10" onchange="calcularPontuacao()"> Sim
-                            <input type="radio" name="Livro do ano" value="0" onchange="calcularPontuacao()"> Não
-                        </td>
-                        <td>
-                            <input type="radio" name="Disciplina" value="10" onchange="calcularPontuacao()"> Sim
-                            <input type="radio" name="Disciplina" value="0" onchange="calcularPontuacao()"> Não
-                        </td>
-                        <td><input type="text" name="Pontuação" readonly></td>
-                    </tr>
-                </table>
-                <button onclick="enviarFormulario()">Enviar Dados</button>
-            </form>
-        </div>
-    </div>
-
-    <div class="desbravador-photos">
-        <h3 style="text-align: center;">Fotos dos Desbravadores</h3>
-        <div class="photo-grid">
-            <div class="photo-item">
-                <img src="assets/img/Falcões Reais/Murilo Miranda.jpg" alt="Desbravador 1"
-                    onclick="abrirLightbox(this)">
-                <p>Nome: Murilo Miranda</p>
-                <p>Idade: 10</p>
-                <p>Função: Desbravador</p>
-            </div>
-            <div class="photo-item">
-                <img src="assets/img/Falcões Reais/Enzo Gabriel.jpg" alt="Desbravador 2" onclick="abrirLightbox(this)">
-                <p>Nome: Enzo Gabriel</p>
-                <p>Idade: 11</p>
-                <p>Função: Desbravador</p>
-            </div>
-            <div class="photo-item">
-                <img src="assets/img/Falcões Reais/Daniel Hipólito.jpg" alt="Desbravador 3"
-                    onclick="abrirLightbox(this)">
-                <p>Nome: Daniel Hipólito</p>
-                <p>Idade: 12</p>
-                <p>Função: Desbravador</p>
-            </div>
-            <div class="photo-item">
-                <img src="assets/img/Falcões Reais/Julio Cesar.jpg" alt="Desbravador 4" onclick="abrirLightbox(this)">
-                <p>Nome: Julio Cesar</p>
-                <p>Idade: 18</p>
-                <p>Função: Instrutor</p>
-            </div>
-            <div class="photo-item">
-                <img src="assets/img/Falcões Reais/Kauê Carvalho.jpg" alt="Desbravador 5" onclick="abrirLightbox(this)">
-                <p>Nome: kauê Carvalho</p>
-                <p>Idade: 20</p>
-                <p>Função: Instrutor</p>
-            </div>
-            <div class="photo-item">
-                <img src="assets/img/Falcões Reais/Gabriel Torres.png" alt="Desbravador 6"
-                    onclick="abrirLightbox(this)">
-                <p>Nome: Gabriel Torres</p>
-                <p>Idade: 24</p>
-                <p>Função: Instrutor</p>
-            </div>
-            <div class="photo-item">
-                <img src="assets/img/Falcões Reais/Ricardo Lemos.jpg" alt="Desbravador 7" onclick="abrirLightbox(this)">
-                <p>Nome: Ricardo Lemos</p>
-                <p>Idade: 18</p>
-                <p>Função: Conselheiro</p>
-            </div>
-            <!-- Adicione mais fotos aqui -->
-        </div>
-    </div>
-</section>
-<!-- aqui finaliza uma unidade -->
-
-<!-- Aqui inicia uma unidade -->
-<section>
-    <h2>Informações da Unidade</h2>
-    <div class="unit-logo">
-        <h3>Fênix</h3>
-        <img src="assets/img/unidade6.png" alt="Logo da Unidade" onclick="abrirLightbox(this)">
-    </div>
-    <div class="unit-info">
-        <h3>Preenchimento de Dados</h3>
-        <div class="form-top-info">
-            <label for="dataEnvio">Data de envio:</label>
-            <input type="text" class="dataEnvio" name="dataEnvio" readonly>
-        </div>
-        
-        <div class="form-scroll">
-            <form id="formularioFenix" onsubmit="return false;">
-                <table class="form-table" id="tabela-dados">
-                    <tr>
-                        <th>Desbravador</th>
-                        <th>Presença</th>
-                        <th>Pontualidade</th>
-                        <th>Uniforme</th>
-                        <th>Bíblia</th>
-                        <th>Pequeno Grupo</th>
-                        <th>Classe Bíblica</th>
-                        <th>Mensalidade</th>
-                        <th>Livro do ano</th>
-                        <th>Disciplina</th>
-                        <th>Pontuação</th>
-                    </tr>
-                    <tr>
-                        <input type="text" id="preenchidoPor" name="preenchidoPor" placeholder="Seu nome aqui 😊"
-                            required>
-                        <input type="hidden" id="Data Emissão" name="Data Emissão">
-                        <td><input type="text" name="Desbravador" placeholder="Nome do Desbravador"></td>
-                        <td>
-                            <input type="radio" name="Presença" value="10" onchange="calcularPontuacao()"> Sim
-                            <input type="radio" name="Presença" value="0" onchange="calcularPontuacao()"> Não
-                        </td>
-                        <td>
-                            <input type="radio" name="Pontualidade" value="10" onchange="calcularPontuacao()"> Sim
-                            <input type="radio" name="Pontualidade" value="5" onchange="calcularPontuacao()"> Chegou
-                            Atrasado
-                            <input type="radio" name="Pontualidade" value="0" onchange="calcularPontuacao()"> Não
-                        </td>
-                        <td>
-                            <input type="radio" name="Uniforme" value="10" onchange="calcularPontuacao()"> Sim
-                            <input type="radio" name="Uniforme" value="5" onchange="calcularPontuacao()"> Incompleto
-                            <input type="radio" name="Uniforme" value="0" onchange="calcularPontuacao()"> Não
-                        </td>
-                        <td>
-                            <input type="radio" name="Bíblia" value="10" onchange="calcularPontuacao()"> Sim
-                            <input type="radio" name="Bíblia" value="0" onchange="calcularPontuacao()"> Não
-                        </td>
-                        <td>
-                            <input type="radio" name="Pequeno Grupo" value="10" onchange="calcularPontuacao()"> Sim
-                            <input type="radio" name="Pequeno Grupo" value="0" onchange="calcularPontuacao()"> Não
-                        </td>
-                        <td>
-                            <input type="radio" name="Classe Bíblica" value="10" onchange="calcularPontuacao()"> Sim
-                            <input type="radio" name="Classe Bíblica" value="0" onchange="calcularPontuacao()"> Não
-                        </td>
-                        <td>
-                            <input type="radio" name="Mensalidade" value="10" onchange="calcularPontuacao()"> Sim
-                            <input type="radio" name="Mensalidade" value="0" onchange="calcularPontuacao()"> Não
-                        </td>
-                        <td>
-                            <input type="radio" name="Livro do ano" value="10" onchange="calcularPontuacao()"> Sim
-                            <input type="radio" name="Livro do ano" value="0" onchange="calcularPontuacao()"> Não
-                        </td>
-                        <td>
-                            <input type="radio" name="Disciplina" value="10" onchange="calcularPontuacao()"> Sim
-                            <input type="radio" name="Disciplina" value="0" onchange="calcularPontuacao()"> Não
-                        </td>
-                        <td><input type="text" name="Pontuação" readonly></td>
-                    </tr>
-                </table>
-                <button onclick="enviarFormulario()">Enviar Dados</button>
-            </form>
-        </div>
-    </div>
-
-    <!-- Script para preencher a data -->
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const dataAtual = new Date().toLocaleDateString('pt-BR');
-
-            // Preencher campo de data no topo
-            document.querySelectorAll('.dataEnvio').forEach(function (campo) {
-                campo.value = dataAtual;
-            });
-
-            // Preencher o campo oculto de emissão também
-            const campoOculto = document.getElementById('dataEmissao');
-            if (campoOculto) {
-                campoOculto.value = dataAtual;
-            }
+        const menuButton = document.getElementById("menuButton");
+        const mobileMenu = document.getElementById("mobileMenu");
+        menuButton.addEventListener("click", () => {
+            mobileMenu.classList.toggle("hidden");
         });
+
+        // Logout buttons
+        document.getElementById("logoutButton").addEventListener("click", () => {
+            sessionStorage.removeItem("estaAutenticado");
+            window.location.href = "login.html";
+        });
+        document.getElementById("logoutButtonMobile").addEventListener("click", () => {
+            sessionStorage.removeItem("estaAutenticado");
+            window.location.href = "login.html";
+        });
+
+        // Verificar autenticação
+        if (!sessionStorage.getItem("estaAutenticado")) {
+            window.location.href = "login.html";
+        }
     </script>
 
-    <div class="desbravador-photos">
-        <h3 style="text-align: center;">Fotos dos Desbravadores</h3>
-        <div class="photo-grid">
-            <div class="photo-item">
-                <img src="assets/img/Fenix/Bernado Lopes.jpg" alt="Desbravador 1" onclick="abrirLightbox(this)">
-                <p>Nome: Bernado Lopes</p>
-                <p>Idade: 10</p>
-                <p>Função: Desbravador</p>
+    <!-- Seções de Unidade -->
+    <main class="max-w-6xl mx-auto p-4 space-y-12">
+
+        <!-- Exemplo Unidade -->
+        <section class="bg-white rounded-xl shadow-md p-6 space-y-6">
+            <div class="flex flex-col md:flex-row md:items-center md:space-x-6 space-y-4 md:space-y-0">
+                <img src="assets/img/unidade1.jpg" alt="Águia da Esperança" class="w-40 h-40 object-cover rounded-full cursor-pointer" onclick="abrirLightbox(this)">
+                <h2 class="text-xl font-bold">Águia da Esperança</h2>
             </div>
-            <div class="photo-item">
-                <img src="assets/img/Fenix/Daniel Hanry.jpeg" alt="Desbravador 2" onclick="abrirLightbox(this)">
-                <p>Nome: Daniel Hanry</p>
-                <p>Idade: 13</p>
-                <p>Função: Desbravador</p>
+
+            <!-- Formulário -->
+            <div class="overflow-x-auto">
+                <form id="formularioAguiaDaEsperanca" onsubmit="return false;" class="space-y-4">
+                    <div class="flex flex-col md:flex-row md:items-center md:space-x-4">
+                        <label for="preenchidoPor">Seu nome:</label>
+                        <input type="text" id="preenchidoPor" name="preenchidoPor" placeholder="Seu nome aqui 😊" required class="border rounded px-2 py-1 w-full md:w-64">
+                    </div>
+                    <table class="w-full border-collapse border border-gray-300 text-sm">
+                        <thead class="bg-red-700 text-white">
+                            <tr>
+                                <th class="border p-2">Desbravador</th>
+                                <th class="border p-2">Presença</th>
+                                <th class="border p-2">Pontualidade</th>
+                                <th class="border p-2">Uniforme</th>
+                                <th class="border p-2">Bíblia</th>
+                                <th class="border p-2">Pequeno Grupo</th>
+                                <th class="border p-2">Classe Bíblica</th>
+                                <th class="border p-2">Mensalidade</th>
+                                <th class="border p-2">Livro do ano</th>
+                                <th class="border p-2">Disciplina</th>
+                                <th class="border p-2">Pontuação</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="border p-1"><input type="text" name="Desbravador" placeholder="Nome" class="w-full border rounded px-1 py-0.5"></td>
+                                <td class="border p-1 text-center">
+                                    <label><input type="radio" name="Presença" value="10" onchange="calcularPontuacao()"> Sim</label>
+                                    <label><input type="radio" name="Presença" value="0" onchange="calcularPontuacao()"> Não</label>
+                                </td>
+                                <td class="border p-1 text-center">
+                                    <label><input type="radio" name="Pontualidade" value="10" onchange="calcularPontuacao()"> Sim</label>
+                                    <label><input type="radio" name="Pontualidade" value="5" onchange="calcularPontuacao()"> Atrasado</label>
+                                    <label><input type="radio" name="Pontualidade" value="0" onchange="calcularPontuacao()"> Não</label>
+                                </td>
+                                <!-- Repita para os outros campos -->
+                                <td class="border p-1 text-center"><input type="radio" name="Uniforme" value="10" onchange="calcularPontuacao()"> Sim</td>
+                                <td class="border p-1 text-center"><input type="radio" name="Bíblia" value="10" onchange="calcularPontuacao()"> Sim</td>
+                                <td class="border p-1 text-center"><input type="radio" name="Pequeno Grupo" value="10" onchange="calcularPontuacao()"> Sim</td>
+                                <td class="border p-1 text-center"><input type="radio" name="Classe Bíblica" value="10" onchange="calcularPontuacao()"> Sim</td>
+                                <td class="border p-1 text-center"><input type="radio" name="Mensalidade" value="10" onchange="calcularPontuacao()"> Sim</td>
+                                <td class="border p-1 text-center"><input type="radio" name="Livro do ano" value="10" onchange="calcularPontuacao()"> Sim</td>
+                                <td class="border p-1 text-center"><input type="radio" name="Disciplina" value="10" onchange="calcularPontuacao()"> Sim</td>
+                                <td class="border p-1 text-center"><input type="text" name="Pontuação" readonly class="w-16 border rounded px-1 py-0.5"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button onclick="enviarFormulario()" class="bg-red-700 text-white px-4 py-2 rounded hover:bg-red-800">Enviar Dados</button>
+                </form>
             </div>
-            <div class="photo-item">
-                <img src="assets/img/Fenix/Emanuel Silva.jpg" alt="Desbravador 2" onclick="abrirLightbox(this)">
-                <p>Nome: Emanuel Silva</p>
-                <p>Idade: 10</p>
-                <p>Função: Desbravador</p>
+
+            <!-- Galeria de fotos -->
+            <div>
+                <h3 class="text-center font-semibold text-lg">Fotos dos Desbravadores</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4">
+                    <div class="bg-gray-100 p-2 rounded text-center">
+                        <img src="assets/img/Aguia da esperança/Angelina Sodré.jpg" alt="Desbravador" class="w-full h-40 object-cover rounded cursor-pointer" onclick="abrirLightbox(this)">
+                        <p>Angelina Sodré</p>
+                        <p>Idade: 12</p>
+                        <p>Função: Desbravadora</p>
+                    </div>
+                    <div class="bg-gray-100 p-2 rounded text-center">
+                        <img src="assets/img/Aguia da esperança/Gabrielly  Lemos.jpeg" alt="Desbravador" class="w-full h-40 object-cover rounded cursor-pointer" onclick="abrirLightbox(this)">
+                        <p>Gabrielly Lemos</p>
+                        <p>Idade: 14</p>
+                        <p>Função: Desbravadora</p>
+                    </div>
+                    <!-- Continue com os outros desbravadores -->
+                </div>
             </div>
-            <div class="photo-item">
-                <img src="assets/img/Fenix/Adryel Moura.jpg" alt="Desbravador 3" onclick="abrirLightbox(this)">
-                <p>Nome: Adryel Moura</p>
-                <p>Idade: 15</p>
-                <p>Função: Desbravador</p>
-            </div>
-            <div class="photo-item">
-                <img src="assets/img/Fenix/Carlos Eduardo.jpg" alt="Desbravador 4" onclick="abrirLightbox(this)">
-                <p>Nome: Carlos Eduardo</p>
-                <p>Idade: 18</p>
-                <p>Função: Instrutor</p>
-            </div>
-            <div class="photo-item">
-                <img src="assets/img/Fenix/Saymon Velasque.jpeg" alt="Desbravador 5" onclick="abrirLightbox(this)">
-                <p>Nome: Saymon Velasque</p>
-                <p>Idade: 22</p>
-                <p>Função: Instrutor</p>
-            </div>
-            <div class="photo-item">
-                <img src="assets/img/Fenix/Miquel Ribeiro.jpeg" alt="Desbravador 6" onclick="abrirLightbox(this)">
-                <p>Nome: Miguel Ribeiro</p>
-                <p>Idade: 16</p>
-                <p>Função: Instrutor</p>
-            </div>
-            <div class="photo-item">
-                <img src="assets/img/Fenix/Giuliano Valente.jpg" alt="Desbravador 7" onclick="abrirLightbox(this)">
-                <p>Nome: Giuliano Valente</p>
-                <p>Idade: 19</p>
-                <p>Função: Instrutor</p>
-            </div>
-            <div class="photo-item">
-                <img src="assets/img/Fenix/Antônio Trajano.jpg" alt="Desbravador 8" onclick="abrirLightbox(this)">
-                <p>Nome: Antônio Trajano</p>
-                <p>Idade: 20</p>
-                <p>Função: Conselheiro</p>
-            </div>
-            <!-- Adicione mais fotos aqui -->
+        </section>
+
+        <!-- Você pode duplicar a seção acima para outras unidades -->
+
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="bg-red-700 text-white mt-12">
+        <div class="max-w-6xl mx-auto py-6 px-4 flex flex-col md:flex-row justify-between items-center">
+            <p>&copy; 2025 Clube de Desbravadores Águia do Leste. Todos os direitos reservados.</p>
+            <p>Desenvolvido por Rafael Sousa</p>
         </div>
-    </div>
-</section>
-<!-- aqui finaliza uma unidade -->
-
-
-
-
-<!-- Lightbox -->
-<div id="imagem-expandida" class="imagem-expandida" onclick="fecharImagem()">
-    <img id="imagem-modal" src="" alt="Imagem Ampliada">
-</div>
-
-<footer>
-    <p>
-        Clube de Desbravadores Águia do Leste - Todos os direitos reservados © 2024
-    </p>
-</footer>
-
-<script>
-    // Função para calcular a pontuação
-    function calcularPontuacao() {
-        // Seleciona todos os campos de pontuação relevantes no formulário
-        const linhas = document.querySelectorAll("#tabela-dados tr");
-        linhas.forEach((linha, index) => {
-            if (index === 0) return; // Ignorar a linha de cabeçalho
-            let pontos = 0;
-
-            // Seleciona todos os inputs do tipo radio na linha atual
-            const radios = linha.querySelectorAll('input[type="radio"]:checked');
-            radios.forEach((radio) => {
-                pontos += parseInt(radio.value); // Soma o valor selecionado
-            });
-
-            // Atualiza o campo de pontuação da linha
-            const campoPontuacao = linha.querySelector('input[name^="Pontuação"]');
-            if (campoPontuacao) {
-                campoPontuacao.value = pontos;
-            }
-        });
-    }
-
-    // Função para enviar o formulário (simulada)
-    function enviarFormulario() {
-        alert('Dados enviados! Pontuação total calculada.');
-    }
-
-    // Função para abrir a imagem no lightbox
-    function abrirLightbox(imagem) {
-        var modal = document.getElementById("imagem-expandida");
-        var modalImg = document.getElementById("imagem-modal");
-        modal.style.display = "flex";
-        modalImg.src = imagem.src;
-    }
-
-    // Função para fechar o lightbox
-    function fecharImagem() {
-        var modal = document.getElementById("imagem-expandida");
-        modal.style.display = "none";
-    }
-
-
-    //--------------- ENVIO DE INFORMAÇÕES PRO GOOGLE DRIVE
-    const hoje = new Date().toLocaleDateString('pt-BR').split('/').reverse().join('-');
-    document.getElementById('Data Emissão').value = hoje;
-
-    document.getElementById('formularioAguiaDaEsperanca').onsubmit = function (e) {
-        e.preventDefault();
-        var formData = new FormData(this);
-        var object = {};
-        formData.forEach((value, key) => { object[key] = value });
-        var json = JSON.stringify(object);
-
-        console.log('json >>> ', json)
-
-        fetch('https://sheetdb.io/api/v1/8q3th4x4425r4', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: json
-        })
-            .then(response => response.json())
-            .then(data => console.log(data))
-            .catch(error => console.error('Erro:', error));
-    };
-
-    document.getElementById('formularioFenix').onsubmit = function (e) {
-        e.preventDefault();
-        var formData = new FormData(this);
-        var object = {};
-        formData.forEach((value, key) => { object[key] = value });
-        var json = JSON.stringify(object);
-
-        console.log('json >>> ', json)
-
-        fetch('https://sheetdb.io/api/v1/eanckad8k2wzy', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: json
-        })
-            .then(response => response.json())
-            .then(data => console.log(data))
-            .catch(error => console.error('Erro:', error));
-    };
-
-    document.getElementById('formularioAguiaDeFe').onsubmit = function (e) {
-        e.preventDefault();
-        var formData = new FormData(this);
-        var object = {};
-        formData.forEach((value, key) => { object[key] = value });
-        var json = JSON.stringify(object);
-
-        console.log('json >>> ', json)
-
-        fetch('https://sheetdb.io/api/v1/eanckad8k2wzy', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: json
-        })
-            .then(response => response.json())
-            .then(data => console.log(data))
-            .catch(error => console.error('Erro:', error));
-    };
-
-    document.getElementById('formularioAguiaDeOuro').onsubmit = function (e) {
-        e.preventDefault();
-        var formData = new FormData(this);
-        var object = {};
-        formData.forEach((value, key) => { object[key] = value });
-        var json = JSON.stringify(object);
-
-        console.log('json >>> ', json)
-
-        fetch('https://sheetdb.io/api/v1/gwyt7kwysb7pw', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: json
-        })
-            .then(response => response.json())
-            .then(data => console.log(data))
-            .catch(error => console.error('Erro:', error));
-    };
-
-    document.getElementById('formularioFalcoesDourado').onsubmit = function (e) {
-        e.preventDefault();
-        var formData = new FormData(this);
-        var object = {};
-        formData.forEach((value, key) => { object[key] = value });
-        var json = JSON.stringify(object);
-
-        console.log('json >>> ', json)
-
-        fetch('https://sheetdb.io/api/v1/t32ojz7ihoe7m', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: json
-        })
-            .then(response => response.json())
-            .then(data => console.log(data))
-            .catch(error => console.error('Erro:', error));
-    };
-
-    document.getElementById('formularioFalcoesReais').onsubmit = function (e) {
-        e.preventDefault();
-        var formData = new FormData(this);
-        var object = {};
-        formData.forEach((value, key) => { object[key] = value });
-        var json = JSON.stringify(object);
-
-        console.log('json >>> ', json)
-
-        fetch('https://sheetdb.io/api/v1/eanckad8k2wzy', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: json
-        })
-
-    }
-</script>
-
-
-</script>
+    </footer>
 
 </body>
-
 </html>
