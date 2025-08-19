@@ -1,252 +1,335 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description"
-    content="Site oficial do Clube de Desbravadores Águia do Leste, com informações sobre eventos, ranking e muito mais.">
-  <link rel="shortcut icon" href="assets/favicon/favicon.ico" type="image/x-icon">
-  <title>Home - Águia do Leste</title>
-  <link rel="stylesheet" href="assets/css/styles.css">
-  <link rel="stylesheet" href="assets/css/destaque.css">
-  <link rel="stylesheet" href="assets/css/ranking.css">
-  <link rel="stylesheet" href="assets/css/script.js">
-  <script src="assets/js/formulario.js" defer></script>
-  <script src="assets/js/lightbox.js" defer></script>
-  <script src="assets/js/scripts.js" defer></script>
-  <script src="assets/css/contador.js" defer></script>
+  <meta name="description" content="Site oficial do Clube de Desbravadores Águia do Leste">
+  <title>Águia do Leste - Home</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
+<body class="bg-white text-gray-800 font-sans">
 
-<body>
-  <!-- Cabeçalho com navegação principal -->
-  <header>
-    <nav class="navbar">
-      <img src="assets/img/logo.png" alt="Logo do Clube de Desbravadores Águia do Leste" class="logo">
-      <ul class="menu">
-        <li><a href="index.html">Início</a></li>
-        <li><a href="sobre.html">Sobre</a></li>
-         <!-- <li><a href="loja.html">Loja</a></li> -->
-        <li><a href="galeria.html">Galeria</a></li>
-        <li><a href="unidade.html">unidade</a></li>
-        <li><a href="contatos.html">Contatos</a></li>
+  <!-- Navbar -->
+  <header class="bg-red-700 text-white shadow-md sticky top-0 z-50">
+    <nav class="max-w-7xl mx-auto flex items-center justify-between p-4">
+      <img src="assets/img/logo.png" alt="Logo Águia do Leste" class="w-14 h-14 rounded-full">
+      <ul class="hidden md:flex gap-6 text-lg font-semibold">
+        <li><a href="index.html" class="hover:text-yellow-300">Início</a></li>
+        <li><a href="sobre.html" class="hover:text-yellow-300">Sobre</a></li>
+        <li><a href="galeria.html" class="hover:text-yellow-300">Galeria</a></li>
+        <li><a href="unidade.html" class="hover:text-yellow-300">Unidade</a></li>
+        <li><a href="contatos.html" class="hover:text-yellow-300">Contatos</a></li>
       </ul>
     </nav>
-    
   </header>
 
   <!-- Seção de boas-vindas -->
-  <section class="boas-vindas">
-    <div class="boas-vindas-texto">
-      <h1>🌟 Bem-vindo ao Clube de Desbravadores Águia do Leste 🦅</h1>
-      <p>
+  <section class="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 px-6 py-12 items-center">
+    <div>
+      <h1 class="text-3xl md:text-4xl font-bold text-red-700 leading-snug">
+        🌟 Bem-vindo ao Clube de Desbravadores Águia do Leste 🦅
+      </h1>
+      <p class="mt-4 text-lg text-gray-700">
         Somos mais que um clube — somos uma família de aventureiros da fé, chamados para servir e guiados pela Palavra de Deus.
-Nascemos sob as asas da esperança e alçamos voo rumo ao conhecimento, à natureza e ao amor ao próximo, seguindo os passos do Mestre.
-
-<p>📖 "Mas os que esperam no Senhor renovarão as forças, subirão com asas como águias; correrão, e não se cansarão; caminharão, e não se fatigarão." – Isaías 40:31 </p>
-<p>📍 Com orgulho, fazemos parte do Distrito Tancredo Neves, na vibrante cidade de Porto Velho - RO.
-🛡️ Representamos a ANRA – União Noroeste Brasileira, com a missão de formar líderes segundo o coração de Deus, fortalecer a fé e iluminar o mundo com a luz de Cristo.</p>
-
-<p>Aqui, cada desbravador é uma Águia que aprende a voar mais alto, mais longe e com um propósito celestial! ✨🙏"</p>
-      <a href="https://www.youtube.com/@ADLalternativo" target="_blank" class="btn-cta">
-        Conhecer nosso canal
+      </p>
+      <blockquote class="mt-4 italic text-gray-600 border-l-4 border-red-600 pl-4">
+        📖 "Mas os que esperam no Senhor renovarão as forças, subirão com asas como águias..." – Isaías 40:31
+      </blockquote>
+      <a href="https://www.youtube.com/@ADLalternativo" target="_blank" class="inline-block mt-6 px-6 py-3 bg-yellow-500 hover:bg-yellow-600 text-white font-bold rounded-lg shadow">
+        🎥 Conhecer nosso canal
       </a>
     </div>
-
-    <div class="boas-vindas-video">
-      <video width="560" height="315" controls>
+    <div>
+      <video class="w-full rounded-lg shadow-lg" controls>
         <source src="assets/videos/adlvideo.mp4" type="video/mp4">
-        <track src="assets/videos/adlvideo.vtt" kind="subtitles" srclang="pt-BR" label="Português">
-        Seu navegador não suporta o elemento de vídeo. Visite nosso canal do
-        YouTube para assistir.
+        Seu navegador não suporta vídeo.
       </video>
     </div>
   </section>
 
-    <!-- Seção: Mural de Recados / Avisos Rápidos -->
-<section class="mural" id="mural-recados">
-  <div class="container">
-    <h2>📢 Mural de Recados</h2>
-    <ul class="avisos-lista">
+  <!-- Mural de Recados -->
+  <section class="bg-gray-100 py-12 px-6">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-2xl font-bold text-center text-red-700">📢 Mural de Recados</h2>
+      <div class="grid md:grid-cols-2 gap-6 mt-8">
+        
+        <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg">
+          <h3 class="text-xl font-semibold mb-2">💼 Pequeno Grupo</h3>
+          <p>🧭 Local: Em breve iremos divulgar – Aguarde!</p>
+          <p class="mt-2">Levar Bíblia e nunca deixe seu lenço para trás. 📝</p>
+        </div>
 
+        <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg">
+          <h3 class="text-xl font-semibold mb-2">🔥 Reunião Especial</h3>
+          <p><strong>🗓 Quando:</strong> Sábado, 16/08 às 15h</p>
+          <p><strong>📍 Onde:</strong> Igreja IASD - Ulisses Guimarães</p>
+          <p class="mt-2">🌟 Uniforme completo e muita disposição!</p>
+        </div>
 
-      <li>
-        <h3>💼 Pequeno Grupo</h3>
-        <p>🧭 Local: Embreve iremos Divulgar – Aguarde !</p>
-        <p>Todos devem comparecer. Levar sua biblia e nunca deixe seu lenço para trás. 📝</p>
-      </li>
+        <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg">
+          <h3 class="text-xl font-semibold mb-2">🚨 Domingo</h3>
+          <p><strong>📅 8h</strong> na Escola</p>
+          <p class="mt-2">⏰ Após 8h30 os portões serão fechados.</p>
+        </div>
 
-      <li>
-        <h3>🔥 Reunião Especial Neste Sábado!</h3>
-        <p><strong>🗓 Quando:</strong> Sábado, 16/08 às 15h</p>
-        <p><strong>📍 Onde:</strong> Igreja IASD - Ulisses Guimarães</p>
-        <p>🌟 Traga sua Bíblia, uniforme completo e muita disposição! 💪🙌</p>
-      </li>
+        <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg">
+          <h3 class="text-xl font-semibold mb-2">🌿 Atividade Externa</h3>
+          <p><strong>📍 Parque da cidade</strong> – 30/08/25</p>
+          <p class="mt-2">Especialidade nova em breve! 🏞️🍎</p>
+        </div>
 
-      <li>
-        <h3>🚨 Aviso Importante: Domingo: </h3>
-        <p><strong>📅 Domingo às 8h</strong> na ESCOLA</p>
-        <p>⏰ Chegue no horário! Após as 8h30 os portões serão fechados. Evite atrasos! 🚪</p>
-      </li>    
-
-      <li>
-        <h3>🌿 Atividade Externa Confirmada!</h3>
-        <p><strong>📍 Parque da cidade</strong> – Sábado (30/08/25)</p>
-        <p>Especialidade nova, fique por dentro de mais informações, em breve! 🏞️🍎</p>
-      </li>
-
-    </ul>
-  </div>
-</section>
-  
-  <section id="eventos">
-    <div class="evento">
-      <h3>Próximo Evento: Quebrando Silêncio</h3>
-      <div class="contagem-regressiva" id="contador">
-        <span id="dias">00</span>d
-        <span id="horas">00</span>h
-        <span id="minutos">00</span>m
-        <span id="segundos">00</span>s
       </div>
     </div>
   </section>
 
-  <!-- Desbravador destaque do trimestre -->
-  <section class="destaque-trimestre">
-    <h2>Desbravadores Destaque do Trimestre</h2>
-    <div class="destaque-container">
-      <div class="destaque-card">
-        <img src="assets/img/Desbravador destaque/Adriel3.jpg" alt="Desbravadora Emanuele Carvalho" onclick="abrirLightbox(this)">
-        <p><strong>Nome:</strong> Adryel Moura</p>
-        <p><strong>Colocação:</strong> 🥇 1º Lugar</p>
-        <p><strong>DBV:</strong> ⭐⭐⭐⭐⭐</p>
-        <p><strong>Pontuação:</strong> 10.383 pontos</p>
-      </div>
-      
-      <div class="destaque-card">
-        <img src="assets/img/Desbravador destaque/mole2.jpeg" alt="Desbravadora Emanuele Carvalho" onclick="abrirLightbox(this)">
-        <p><strong>Nome:</strong> Emanuele Carvalho</p>
-        <p><strong>Colocação:</strong> 🥇 1º Lugar</p>
-        <p><strong>Aspirante lider:</strong> ⭐⭐⭐⭐⭐</p>
-        <p><strong>Pontuação:</strong> 8.511 pontos</p>
-      </div>  
-      <!-- Adicione mais cards se quiser -->
-    </div>    
+  <!-- Contador Próximo Evento -->
+  <section class="bg-red-700 text-white py-12 px-6 text-center">
+    <h2 class="text-2xl md:text-3xl font-bold">⏳ Contagem Regressiva para o Próximo Evento</h2>
+    <p class="mt-3 text-lg">Acampamento Regional - 15 de Setembro de 2025</p>
+    <div id="contador" class="mt-6 flex justify-center gap-6 text-xl font-mono"></div>
   </section>
 
-  <!-- Ranking de desbravadores -->
-  <section class="ranking">
-    <h2>Ranking de Desbravadores</h2>
-    <table class="ranking-table">
-      <thead>
-        <tr>
-          <th>Posição</th>
-          <th>Foto</th>
-          <th>Desbravador</th>
-          <th>Pontuação</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>2º</td>
-          <td>
-            <img src="assets/img/Desbravador destaque/Gabrielly  Lemos.jpeg" alt="Imagem da desbravadora Gabriele Oliveira"
-              onclick="abrirLightbox(this)">
-          </td>
-          <td>Gabryelle "Lemos"</td>
-          <td>9.928</td>
-        </tr>
-        <tr>
-          <td>3º</td>
-          <td>
-            <img src="assets/img/Desbravador destaque/Nicolly.jpg" alt="Imagem da desbravadora Beatriz" onclick="abrirLightbox(this)">
-          </td>
-          <td>Nicolly</td>
-          <td>9.503</td>
-        </tr>
-        <tr>
-          <td>4º</td>
-          <td>
-            <img src="assets/img/Desbravador destaque/Melody.jpg" alt="Imagem da desbravadora Emanuelle"
-              onclick="abrirLightbox(this)">
-          </td>
-          <td>Melody</td>
-          <td>8.889</td>
-        </tr>
-        <tr>
-          <td>5º</td>
-          <td>
-            <img src="assets/img/Desbravador destaque/Bibi.jpeg" alt="Imagem do desbravador Daniel" onclick="abrirLightbox(this)">
-          </td>
-          <td>Gabrielle "Bibi"</td>
-          <td>8.324</td>
-        </tr>
-        <tr>
-          <td>6º</td>
-          <td>
-            <img src="assets/img/Desbravador destaque/Carlos.JPG" alt="Imagem do desbravador Gustavo" onclick="abrirLightbox(this)">
-          </td>
-          <td>Carlos Eduardo</td>
-          <td>8.224</td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
+  <!-- Ranking -->
+  <section class="max-w-6xl mx-auto px-6 py-12">
+  <h2 class="text-2xl font-bold text-center text-red-700 mb-6">🏆 Ranking de Desbravadores</h2>
   
-   <section id="palavra-semana">
-    <h2>Palavra da Semana</h2>
-    <blockquote>
-      "O Senhor é a minha força e o meu escudo; nele o meu coração confia, e dele recebo ajuda."  
-      <br>– Salmos 28:7
+  <div class="flex space-x-6 overflow-x-auto pb-4 scrollbar-thin scrollbar-thumb-red-500 scrollbar-track-gray-200">
+    
+    <!-- Card 1 -->
+    <div class="min-w-[220px] bg-white rounded-xl shadow p-4 flex-shrink-0 hover:shadow-lg transition">
+      <img src="assets/img/Desbravador destaque/Adriel3.jpg" alt="Adryel Moura" class="w-20 h-20 rounded-full mx-auto">
+      <h3 class="mt-4 text-lg font-bold text-center">Adryel Moura</h3>
+      <p class="text-center text-yellow-500 font-semibold">🥇 1º Lugar</p>
+      <p class="text-center text-gray-600 mt-1">10.383 pontos</p>
+    </div>
+    
+    <!-- Card 2 -->
+    <div class="min-w-[220px] bg-white rounded-xl shadow p-4 flex-shrink-0 hover:shadow-lg transition">
+      <img src="assets/img/Desbravador destaque/Gabrielly  Lemos.jpeg" alt="Gabryelle Lemos" class="w-20 h-20 rounded-full mx-auto">
+      <h3 class="mt-4 text-lg font-bold text-center">Gabryelle Lemos</h3>
+      <p class="text-center text-yellow-500 font-semibold">🥈 2º Lugar</p>
+      <p class="text-center text-gray-600 mt-1">9.928 pontos</p>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="min-w-[220px] bg-white rounded-xl shadow p-4 flex-shrink-0 hover:shadow-lg transition">
+      <img src="assets/img/Desbravador destaque/Nicolly.jpg" alt="Nicolly" class="w-20 h-20 rounded-full mx-auto">
+      <h3 class="mt-4 text-lg font-bold text-center">Nicolly</h3>
+      <p class="text-center text-yellow-500 font-semibold">🥉 3º Lugar</p>
+      <p class="text-center text-gray-600 mt-1">9.503 pontos</p>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="min-w-[220px] bg-white rounded-xl shadow p-4 flex-shrink-0 hover:shadow-lg transition">
+      <img src="assets/img/Desbravador destaque/Melody.jpg" alt="Melody" class="w-20 h-20 rounded-full mx-auto">
+      <h3 class="mt-4 text-lg font-bold text-center">Melody</h3>
+      <p class="text-center text-yellow-500 font-semibold">4º Lugar</p>
+      <p class="text-center text-gray-600 mt-1">8.889 pontos</p>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="min-w-[220px] bg-white rounded-xl shadow p-4 flex-shrink-0 hover:shadow-lg transition">
+      <img src="assets/img/Desbravador destaque/Melody.jpg" alt="Melody" class="w-20 h-20 rounded-full mx-auto">
+      <h3 class="mt-4 text-lg font-bold text-center">Melody</h3>
+      <p class="text-center text-yellow-500 font-semibold">4º Lugar</p>
+      <p class="text-center text-gray-600 mt-1">8.889 pontos</p>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="min-w-[220px] bg-white rounded-xl shadow p-4 flex-shrink-0 hover:shadow-lg transition">
+      <img src="assets/img/Desbravador destaque/Melody.jpg" alt="Melody" class="w-20 h-20 rounded-full mx-auto">
+      <h3 class="mt-4 text-lg font-bold text-center">Melody</h3>
+      <p class="text-center text-yellow-500 font-semibold">4º Lugar</p>
+      <p class="text-center text-gray-600 mt-1">8.889 pontos</p>
+    </div>
+
+    <!-- Adicione mais cards conforme necessário -->
+
+  </div>
+</section>
+
+
+  <!-- Palavra da Semana -->
+  <section class="bg-yellow-50 py-12 px-6 text-center">
+    <h2 class="text-2xl font-bold text-red-700">📖 Palavra da Semana</h2>
+    <blockquote class="mt-4 text-lg italic text-gray-700 max-w-2xl mx-auto">
+      "O Senhor é a minha força e o meu escudo; nele o meu coração confia." – Salmos 28:7
     </blockquote>
   </section>
 
-   <!-- Fundo com slideshow -->
-  <div class="slideshow-bg"></div>
+  <!-- Desbravador Desaparecido -->
+  <section class="py-12 px-6 bg-gray-100">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-2xl md:text-3xl font-bold text-center text-red-700">
+        Desbravador Desaparecido
+      </h2>
 
- <section class="desaparecido">
-  <h2>Desbravador Desaparecido</h2>
-  <div class="cartaz">
-    <div class="slideshow-desaparecido">
-      <img src="assets/img/Desaparecido/aline5.jpeg" alt="volta1" class="slide active" onclick="abrirLightbox(this)">
-      <img src="assets/img/Desaparecido/Angelina.jpeg" alt="volta2" class="slide" onclick="abrirLightbox(this)">
+      <div class="mt-8 bg-white rounded-2xl shadow p-6 md:p-8 grid md:grid-cols-2 gap-8 items-center">
+        <!-- Slideshow -->
+        <div class="relative">
+          <div id="slides-desap" class="relative overflow-hidden rounded-xl aspect-[4/3]">
+            <img src="assets/img/Desaparecido/aline5.jpeg" alt="Aline"
+              class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-100"
+              onclick="abrirLightbox(this)" />
+            <img src="assets/img/Desaparecido/Angelina.jpeg" alt="Angelina"
+              class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0"
+              onclick="abrirLightbox(this)" />
+          </div>
+
+          <!-- Controles -->
+          <div class="absolute inset-0 flex items-center justify-between px-2">
+            <button type="button" id="prev-desap"
+              class="bg-black/40 hover:bg-black/60 text-white rounded-full w-9 h-9 grid place-items-center">‹</button>
+            <button type="button" id="next-desap"
+              class="bg-black/40 hover:bg-black/60 text-white rounded-full w-9 h-9 grid place-items-center">›</button>
+          </div>
+        </div>
+
+        <!-- Texto -->
+        <div>
+          <h3 class="text-xl font-semibold text-red-700">Atenção!</h3>
+          <p class="mt-3 text-gray-700 leading-relaxed">
+            Estamos à procura <strong>da desbravadora Aline</strong>. Ela não comparece às atividades do clube
+            desde <strong>26 de julho de 2025</strong>. Qualquer informação, entre em contato com a diretoria.
+          </p>
+          <div class="mt-4 text-sm text-gray-500">
+            💡 Clique na foto para ampliar.
+          </div>
+        </div>
+      </div>
     </div>
-    <h3>Atenção!</h3>
-    <p>
-      Estamos à procura do desbravadora <strong>Aline</strong>. Ela não comparece às atividades do clube desde 26 de julho de 2025.
-      Qualquer informação, entre em contato com a diretoria.
-    </p>
-  </div>
-</section>
+  </section>
+
+  <!-- Destaque do Trimestre -->
+  <section class="py-12 px-6">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-2xl md:text-3xl font-bold text-center text-red-700">
+        🌟 Desbravadores Destaque do Trimestre
+      </h2>
+
+      <div class="mt-8 grid gap-8 md:grid-cols-2">
+        <!-- Card 1 -->
+        <div class="bg-white rounded-2xl shadow p-6 text-center hover:shadow-lg">
+          <img src="assets/img/Desbravador destaque/Adriel3.jpg" alt="Adryel Moura"
+               class="w-32 h-32 object-cover rounded-full mx-auto cursor-pointer"
+               onclick="abrirLightbox(this)">
+          <p class="mt-4"><strong>Nome:</strong> Adryel Moura</p>
+          <p><strong>Colocação:</strong> 🥇 1º Lugar</p>
+          <p><strong>DBV:</strong> ⭐⭐⭐⭐⭐</p>
+          <p><strong>Pontuação:</strong> 10.383 pontos</p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-white rounded-2xl shadow p-6 text-center hover:shadow-lg">
+          <img src="assets/img/Desbravador destaque/mole2.jpeg" alt="Emanuele Carvalho"
+               class="w-32 h-32 object-cover rounded-full mx-auto cursor-pointer"
+               onclick="abrirLightbox(this)">
+          <p class="mt-4"><strong>Nome:</strong> Emanuele Carvalho</p>
+          <p><strong>Colocação:</strong> 🥇 1º Lugar</p>
+          <p><strong>Aspirante líder:</strong> ⭐⭐⭐⭐⭐</p>
+          <p><strong>Pontuação:</strong> 8.511 pontos</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Lightbox -->
-  <div id="imagem-expandida" class="imagem-expandida" onclick="fecharImagem()">
-    <img id="imagem-modal" src="" alt="Imagem Ampliada">
+  <div id="lightbox"
+       class="fixed inset-0 bg-black/70 hidden items-center justify-center p-4 z-50"
+       onclick="fecharLightbox()">
+    <img id="lightbox-img" src="" alt="Imagem ampliada"
+         class="max-h-[85vh] w-auto rounded-xl shadow-2xl" />
   </div>
 
-  <footer>
-    <p>
-      Clube de Desbravadores Águia do Leste - Todos os direitos reservados ©
-      2024
-    </p>
+  <!-- Footer -->
+  <footer class="bg-red-700 text-white text-center py-4 mt-8">
+    <p>© 2024 Clube de Desbravadores Águia do Leste - Todos os direitos reservados</p>
   </footer>
 
+  <!-- Scripts -->
   <script>
-    // Função para abrir a imagem no lightbox
-    function abrirLightbox(imagem) {
-      var modal = document.getElementById("imagem-expandida");
-      var modalImg = document.getElementById("imagem-modal");
-      modal.style.display = "flex";
-      modalImg.src = imagem.src;
+    // Lightbox
+    function abrirLightbox(el) {
+      const lb = document.getElementById('lightbox');
+      const img = document.getElementById('lightbox-img');
+      img.src = el.src;
+      lb.classList.remove('hidden');
+      lb.classList.add('flex');
+    }
+    function fecharLightbox() {
+      const lb = document.getElementById('lightbox');
+      lb.classList.add('hidden');
+      lb.classList.remove('flex');
     }
 
-    // Função para fechar o lightbox
-    function fecharImagem() {
-      var modal = document.getElementById("imagem-expandida");
-      modal.style.display = "none";
+    // Slideshow simples
+    (function() {
+      const container = document.getElementById('slides-desap');
+      if (!container) return;
+
+      const slides = Array.from(container.querySelectorAll('img'));
+      let i = 0;
+
+      function show(n) {
+        slides.forEach((img, idx) => {
+          img.classList.toggle('opacity-100', idx === n);
+          img.classList.toggle('opacity-0', idx !== n);
+        });
+        i = n;
+      }
+
+      // Auto-play
+      let timer = setInterval(() => show((i + 1) % slides.length), 4000);
+
+      // Controles manuais
+      const prev = document.getElementById('prev-desap');
+      const next = document.getElementById('next-desap');
+
+      function resetAnd(n) {
+        clearInterval(timer);
+        show(n);
+        timer = setInterval(() => show((i + 1) % slides.length), 4000);
+      }
+
+      if (prev) prev.addEventListener('click', e => {
+        e.stopPropagation();
+        resetAnd((i - 1 + slides.length) % slides.length);
+      });
+      if (next) next.addEventListener('click', e => {
+        e.stopPropagation();
+        resetAnd((i + 1) % slides.length);
+      });
+    })();
+
+    // Contador
+    function iniciarContador(dataAlvo) {
+      const destino = new Date(dataAlvo).getTime();
+      const div = document.getElementById('contador');
+
+      setInterval(() => {
+        const agora = new Date().getTime();
+        const diff = destino - agora;
+
+        if (diff <= 0) {
+          div.innerHTML = "🚀 O evento começou!";
+          return;
+        }
+
+        const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const horas = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutos = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const segundos = Math.floor((diff % (1000 * 60)) / 1000);
+
+        div.innerHTML = `
+          <span>${dias}d</span>
+          <span>${horas}h</span>
+          <span>${minutos}m</span>
+          <span>${segundos}s</span>
+        `;
+      }, 1000);
     }
+
+    iniciarContador("2025-09-15T08:00:00");
   </script>
 </body>
-
 </html>
-
