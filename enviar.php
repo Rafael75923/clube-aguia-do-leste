@@ -1,12 +1,11 @@
 <?php
-$host = "ep-jolly-tree-aev4kelo-pooler.c-2.us-east-2.aws.neon.tech";
-$port = "5432";
-$dbname = "clube_aguia_do_leste";
-$username = "neondb_owner";
-$password = "npg_njPGZ6DzJp2N";
+$host = "127.0.0.1";
+$dbname = "aguiadoleste";
+$username = "root";
+$password = ""; // normalmente vazio no XAMPP
 
 try {
-    $conn = new PDO("pgsql:host=$host;port=$port;dbname=$dbname;sslmode=require", $username, $password);
+    $conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     $nome = trim($_POST['nome'] ?? '');
@@ -14,14 +13,13 @@ try {
     $assunto = trim($_POST['assunto'] ?? '');
     $mensagem = trim($_POST['mensagem'] ?? '');
 
-    if($nome && $email && $assunto && $mensagem){
-        $sql = "INSERT INTO contatos (nome, email, assunto, mensagem)
-                VALUES (:nome, :email, :assunto, :mensagem)";
+    if($nome && $email && $mensagem){
+        $sql = "INSERT INTO contatos (nome, email, mensagem, data_envio)
+                VALUES (:nome, :email, :mensagem, NOW())";
         $stmt = $conn->prepare($sql);
         $stmt->execute([
             ':nome' => $nome,
             ':email' => $email,
-            ':assunto' => $assunto,
             ':mensagem' => $mensagem
         ]);
         header("Location: contatos.html?ok=1");
@@ -34,4 +32,3 @@ try {
 }
 exit;
 ?>
-
