@@ -89,13 +89,13 @@
         
         <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg">
           <h3 class="text-xl font-semibold mb-2">💼 Pequeno Grupo</h3>
-          <p>🧭 Local: Casa da Desbravadora - 19:30h – Gabrielly Lemos</p>
+          <p>🧭 Local: Em breve iremos divulgar – Aguarde!</p>
           <p class="mt-2">Levar Bíblia e nunca deixe seu lenço para trás. 📝</p>
         </div>
 
         <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg">
           <h3 class="text-xl font-semibold mb-2">🔥 Reunião Especial</h3>
-          <p><strong>🗓 Quando:</strong> Sábado, 23/08 às 15h</p>
+          <p><strong>🗓 Quando:</strong> Sábado, 16/08 às 15h</p>
           <p><strong>📍 Onde:</strong> Igreja IASD - Ulisses Guimarães</p>
           <p class="mt-2">🌟 Uniforme completo e muita disposição!</p>
         </div>
@@ -123,7 +123,7 @@
     <div id="contador" class="mt-6 flex justify-center gap-6 text-xl font-mono"></div>
   </section>
 
- <!-- Ranking -->
+   <!-- Ranking -->
   <section class="max-w-6xl mx-auto px-6 py-12">
   <h2 class="text-2xl font-bold text-center text-red-700 mb-6">🏆 Ranking de Desbravadores</h2>
   
@@ -224,47 +224,67 @@
   </section>
 
   <!-- Desbravador Desaparecido -->
-  <section class="py-12 px-6 bg-gray-100">
-    <div class="max-w-5xl mx-auto">
-      <h2 class="text-2xl md:text-3xl font-bold text-center text-red-700">
-        Desbravador Desaparecido
-      </h2>
+<section class="relative py-12 px-6">
+  <h2 class="text-2xl md:text-3xl font-bold text-center text-red-700 z-10 relative">
+    Desbravador Desaparecido
+  </h2>
 
-      <div class="mt-8 bg-white rounded-2xl shadow p-6 md:p-8 grid md:grid-cols-2 gap-8 items-center">
-        <!-- Slideshow -->
-        <div class="relative">
-          <div id="slides-desap" class="relative overflow-hidden rounded-xl aspect-[4/3]">
-            <img src="assets/img/Desaparecido/aline5.jpeg" alt="Aline"
-              class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-100"
-              onclick="abrirLightbox(this)" />
-            <img src="assets/img/Desaparecido/Angelina.jpeg" alt="Angelina"
-              class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0"
-              onclick="abrirLightbox(this)" />
-          </div>
+  <!-- Slideshow de fundo -->
+  <div class="absolute inset-0 -z-10 overflow-hidden rounded-2xl">
+    <img src="assets/img/sobre.jpg"
+         class="absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-1000 animate-fade"
+         alt="Aline">
+    <img src="assets/img/Desaparecido/foto2.jpg"
+         class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000 animate-fade delay-4000"
+         alt="Angelina">
+         <img src="assets/img/Desaparecido/foto1.jpg"
+         class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000 animate-fade delay-4000"
+         alt="Angelina">
+         <img src="assets/img/Desaparecido/foto3.jpg"
+         class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000 animate-fade delay-4000"
+         alt="Angelina">
+           <img src="assets/img/Desaparecido/foto4.jpeg"
+         class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000 animate-fade delay-4000"
+         alt="Angelina">
+  </div>
 
-          <!-- Controles -->
-          <div class="absolute inset-0 flex items-center justify-between px-2">
-            <button type="button" id="prev-desap"
-              class="bg-black/40 hover:bg-black/60 text-white rounded-full w-9 h-9 grid place-items-center">‹</button>
-            <button type="button" id="next-desap"
-              class="bg-black/40 hover:bg-black/60 text-white rounded-full w-9 h-9 grid place-items-center">›</button>
-          </div>
-        </div>
-
-        <!-- Texto -->
-        <div>
-          <h3 class="text-xl font-semibold text-red-700">Atenção!</h3>
-          <p class="mt-3 text-gray-700 leading-relaxed">
-            Estamos à procura <strong>da desbravadora Aline</strong>. Ela não comparece às atividades do clube
-            desde <strong>26 de julho de 2025</strong>. Qualquer informação, entre em contato com a diretoria.
-          </p>
-          <div class="mt-4 text-sm text-gray-500">
-            💡 Clique na foto para ampliar.
-          </div>
-        </div>
-      </div>
+  <!-- Conteúdo principal -->
+  <div class="relative max-w-3xl mx-auto bg-white/90 p-6 rounded-2xl shadow-lg grid md:grid-cols-2 gap-6 items-center mt-8">
+    <!-- Miniaturas -->
+    <div class="flex justify-center gap-4">
+      <img src="assets/img/Desaparecido/aline5.jpeg" class="w-32 h-32 object-cover rounded-full cursor-pointer" onclick="abrirLightbox(this)">
+      <img src="assets/img/Desaparecido/Angelina.jpeg" class="w-32 h-32 object-cover rounded-full cursor-pointer" onclick="abrirLightbox(this)">
     </div>
-  </section>
+
+    <!-- Texto -->
+    <div>
+      <h3 class="text-xl font-semibold text-red-700">Atenção!</h3>
+      <p class="mt-3 text-gray-700 leading-relaxed">
+        Estamos à procura da desbravadora <strong>Aline</strong> e <strong>Angelina</strong>. Elas não comparece às atividades do clube desde <strong>26 de julho de 2025</strong>.
+        Qualquer informação, entre em contato com a diretoria.
+      </p>
+      <div class="mt-4 text-sm text-gray-500">💡 Clique na foto para ampliar.</div>
+    </div>
+  </div>
+</section>
+
+<!-- Tailwind Animations -->
+<style>
+  @keyframes fade {
+    0%, 20% { opacity: 1; }
+    25%, 95% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+  .animate-fade {
+    animation: fade 8s infinite;
+  }
+
+  .delay-4000 {
+    animation-delay: 4s;
+  }
+</style>
+
 
   <!-- Destaque do Trimestre -->
   <section class="py-12 px-6">
@@ -399,6 +419,3 @@
   </script>
 </body>
 </html>
-
-
-
