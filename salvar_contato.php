@@ -1,57 +1,41 @@
 <?php
 // salvar_contato.php
 
-// Configurações do banco de dados
-$host = "127.0.0.1";
-$dbname = "aguiadoleste";
-$username = "root";
-$password = "";
+// Configurações do banco de dados Neon
+$host = "ep-jolly-tree-aev4kelo-pooler.c-2.us-east-2.aws.neon.tech";
+$port = "5432";
+$dbname = "clube_aguia_do_leste";
+$username = "neondb_owner";
+$password = "npg_njPGZ6DzJp2N";
 
-// Conexão com o banco
-$conn = new mysqli($host, $username, $password, $dbname);
+try {
+    $conn = new PDO("pgsql:host=$host;port=$port;dbname=$dbname;sslmode=require", $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-// Checa conexão
-if ($conn->connect_error) {
-    header("Location: contatos.html?erro=1");
-    exit;
-}
+    $nome = trim($_POST['nome'] ?? '');
+    $email = trim($_POST['email'] ?? '');
+    $assunto = trim($_POST['assunto'] ?? '');
+    $mensagem = trim($_POST['mensagem'] ?? '');
 
-// Verifica se os dados vieram via POST
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nome = trim($_POST['nome']);
-    $email = trim($_POST['email']);
-    $assunto = trim($_POST['assunto']);
-    $mensagem = trim($_POST['mensagem']);
-
-    // Validação básica
-    if (empty($nome) || empty($email) || empty($assunto) || empty($mensagem)) {
-        header("Location: contatos.html?erro=1");
-        exit;
-    }
-
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        header("Location: contatos.html?erro=1");
-        exit;
-    }
-
-    // Prepared statement para evitar SQL injection
-    $stmt = $conn->prepare("INSERT INTO contatos (nome, email, assunto, mensagem) VALUES (?, ?, ?, ?)");
-    $stmt->bind_param("ssss", $nome, $email, $assunto, $mensagem);
-
-    if ($stmt->execute()) {
-        $stmt->close();
-        $conn->close();
+    // Validação completa: verifica se os campos não estão vazios e se o email é válido
+    if ($nome && $email && $assunto && $mensagem && filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $sql = "INSERT INTO contatos (nome, email, assunto, mensagem) VALUES (:nome, :email, :assunto, :mensagem)";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute([
+            ':nome' => $nome,
+            ':email' => $email,
+            ':assunto' => $assunto,
+            ':mensagem' => $mensagem
+        ]);
         header("Location: contatos.html?ok=1");
-        exit;
     } else {
-        $stmt->close();
-        $conn->close();
+        // Se a validação falhar, redireciona com erro
         header("Location: contatos.html?erro=1");
-        exit;
     }
-} else {
-    // Se acessado direto, redireciona
-    header("Location: contatos.html");
-    exit;
+
+} catch (PDOException $e) {
+    // Redireciona com erro em caso de falha na conexão ou na execução da query
+    header("Location: contatos.html?erro=1");
 }
+exit;
 ?>
