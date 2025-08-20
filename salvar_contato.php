@@ -1,30 +1,57 @@
 <?php
-// Configurações do banco
-$servidor = "localhost";
-$usuario = "root"; // padrão do XAMPP
-$senha = "";
-$banco = "aguiadoleste";
+// salvar_contato.php
 
-// Conectar ao MySQL
-$conn = new mysqli($servidor, $usuario, $senha, $banco);
+// Configurações do banco de dados
+$host = "localhost";
+$usuario = "seu_usuario";
+$senha = "sua_senha";
+$banco = "seu_banco";
 
-// Verificar conexão
+// Conexão com o banco
+$conn = new mysqli($host, $usuario, $senha, $banco);
+
+// Checa conexão
 if ($conn->connect_error) {
-    die("Falha na conexão: " . $conn->connect_error);
+    header("Location: contatos.html?erro=1");
+    exit;
 }
 
-// Receber dados do formulário
-$nome = $_POST['nome'];
-$email = $_POST['email'];
-$mensagem = $_POST['mensagem'];
+// Verifica se os dados vieram via POST
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $nome = trim($_POST['nome']);
+    $email = trim($_POST['email']);
+    $assunto = trim($_POST['assunto']);
+    $mensagem = trim($_POST['mensagem']);
 
-// Inserir no banco
-$sql = "INSERT INTO contatos (nome, email, mensagem) VALUES ('$nome', '$email', '$mensagem')";
-if ($conn->query($sql) === TRUE) {
-    echo "Mensagem enviada com sucesso!";
+    // Validação básica
+    if (empty($nome) || empty($email) || empty($assunto) || empty($mensagem)) {
+        header("Location: contatos.html?erro=1");
+        exit;
+    }
+
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        header("Location: contatos.html?erro=1");
+        exit;
+    }
+
+    // Prepared statement para evitar SQL injection
+    $stmt = $conn->prepare("INSERT INTO contatos (nome, email, assunto, mensagem) VALUES (?, ?, ?, ?)");
+    $stmt->bind_param("ssss", $nome, $email, $assunto, $mensagem);
+
+    if ($stmt->execute()) {
+        $stmt->close();
+        $conn->close();
+        header("Location: contatos.html?ok=1");
+        exit;
+    } else {
+        $stmt->close();
+        $conn->close();
+        header("Location: contatos.html?erro=1");
+        exit;
+    }
 } else {
-    echo "Erro: " . $sql . "<br>" . $conn->error;
+    // Se acessado direto, redireciona
+    header("Location: contatos.html");
+    exit;
 }
-
-$conn->close();
 ?>
