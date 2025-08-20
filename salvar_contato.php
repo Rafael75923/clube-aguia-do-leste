@@ -2,13 +2,13 @@
 // salvar_contato.php
 
 // Configurações do banco de dados
-$host = "localhost";
-$usuario = "seu_usuario";
-$senha = "sua_senha";
-$banco = "seu_banco";
+$host = "127.0.0.1";
+$dbname = "aguiadoleste";
+$username = "root";
+$password = "";
 
 // Conexão com o banco
-$conn = new mysqli($host, $usuario, $senha, $banco);
+$conn = new mysqli($host, $username, $password, $dbname);
 
 // Checa conexão
 if ($conn->connect_error) {
